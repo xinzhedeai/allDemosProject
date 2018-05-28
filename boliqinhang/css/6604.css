@@ -1,0 +1,4316 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*导航*/
+
+#indexPage .module.bgShow .bgmask {
+    display: none;
+}
+
+#teampost {
+    padding-top: 80px;
+}
+
+#teambody .theader .subtitle {
+    color: #9E9E9E;
+}
+
+#teamlist {
+    margin-top: 23px;
+}
+
+#header ul li.navitem a.active,
+#header ul li.navitem:hover a {
+    background: transparent;
+}
+
+/*
+
+#header.mini ul li.navitem:hover a {color: #fff;}
+
+#header.mini ul li.navitem ul.subnav li a{color: #999;}
+
+#header.mini ul li.navitem a{color:#fff}
+
+#header.mini {background: rgb(111, 106, 102);padding-top: 0px; box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);height: 60px; }
+
+*/
+
+#header.mini {
+    background: #fff;
+    padding-top: 0px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+    height: 60px;
+}
+
+#header .content {
+    padding-left: 0px;
+    padding-right: 0px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2)
+}
+
+#header ul#nav {
+    float: right;
+    padding: 0px 40px 0px 40px;
+    transition: all 0.3s ease-out 0s;
+}
+
+#header.mini ul#nav {
+    padding: 0px 20px 0px 20px;
+}
+
+#header ul li.navitem {
+    padding: 20px 0.5px;
+    height: auto;
+}
+
+#header.mini ul li.navitem {
+    padding: 10px 0.5px;
+}
+
+#header {
+    padding-top: 0px;
+    background-color: transparent;
+    height: 80px
+}
+
+#header #logo {
+    padding: 20px 40px 20px 40px;
+    transition: all 0.3s ease-out 0s;
+}
+
+#header #logo img {
+    transform: scale(1, 1);
+    transition: all 0.3s ease-out 0s;
+}
+
+#header.mini #logo {
+    padding: 10px 20px 10px 20px;
+}
+
+#header.mini #logo img {
+    transform: scale(0.8, 0.8);
+}
+
+#header ul li.navitem a {
+    color: #4e4a4b;
+    padding: 10px 26px;
+    display: block;
+}
+
+#header ul li.navitem {
+    padding: 20px 0.5px;
+    height: auto;
+    line-height: 20px;
+}
+
+.nobanner #header {
+    background: #fff;
+}
+
+.lowB #header {
+    background: #FFF;
+}
+
+#indexPage a.more {
+    height: 100px;
+    font-size: 14px;
+    background-color: #f5f5f5;
+    line-height: 100px;
+    font-family: "Arial";
+    color: #2d2d2d;
+    border-color: rgb(245, 245, 245);
+    border-radius: 0px;
+    text-align: center;
+    text-indent: 0px;
+    margin: 3% auto;
+    width: 90%;
+}
+
+#indexPage #mproject a::after {
+    content: "";
+    display: block;
+    width: 90%;
+    height: 3px;
+    background-color: #767676;
+    margin-left: 5%;
+    position: absolute;
+    -webkit-margin-before: -1px;
+    transition: all 0.3s ease 0s;
+    margin-top: -48px;
+    z-index: -1;
+}
+
+#indexPage #mproject a::after {
+    content: "";
+    display: block;
+    width: 90%;
+    height: 2px;
+    background-color: #767676;
+    position: absolute;
+    -webkit-margin-before: -1px;
+    transition: all 0.3s ease 0s;
+    z-index: -1;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    margin: 0;
+}
+
+#indexPage #mproject a:hover::after {
+    width: 100%;
+    height: 100%;
+    background-color: #1f1f1f;
+}
+
+#indexPage a.more i {
+    font-size: 20px;
+    position: relative;
+}
+
+#indexPage a.more:hover {
+    border-color: #3d3d3d;
+    text-indent: 0px;
+    text-align: center;
+    background-color: #3d3d3d;
+    color: #fff;
+}
+
+#indexPage a.more:hover i {
+    color: rgba(255, 255, 255, 0.77);
+    font-size: 14px;
+    text-indent: 12px;
+}
+
+#indexPage #mproject a.more:hover {
+    color: #fff
+}
+
+#indexPage #mpartner .slider_control a:hover {
+    background-color: #424242
+}
+
+#pages a.active,
+#pages a:hover {
+    background: rgba(255, 255, 255, .1);
+    color: #3d3d3d;
+}
+
+.bx-wrapper .bx-controls-direction a:hover {
+    background-color: transparent;
+}
+
+#header ul li.navitem:hover a::before {}
+
+#header ul li.navitem ul.subnav li a::before {
+    width: 0px;
+}
+
+/*导航下拉菜单 */
+
+#indexPage #mproject .content .wrapper {
+    width: 100%
+}
+
+#header ul li.navitem {
+    line-height: 20px;
+    font-size: 15px;
+    color: #fff;
+}
+
+#header ul li.navitem ul.subnav li a {
+    padding: 14px 30px;
+    width: 150px;
+    height: 20px;
+    line-height: 20px;
+    background: #fff;
+    display: block;
+    font-size: 12px;
+    transition: all 0.2s ease-out 0s;
+    color: #999;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+#header ul li.navitem ul.subnav li a:hover {
+    text-indent: 10px;
+    background: #EDEDED;
+    color: #484848;
+}
+
+#header ul li.navitem ul.subnav {
+    border-top: 3px solid #7B7B7B;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+#header ul li.navitem ul.subnav li {
+    border-bottom: 1px solid #FFF;
+}
+
+/*幻灯左右切换按钮 */
+
+.bx-wrapper .bx-controls-direction a {
+    background-color: transparent;
+    border-radius: 0px;
+    width: 80px;
+    top: 50%;
+}
+
+.bx-wrapper .bx-controls-direction a i {
+    transition: all .6s cubic-bezier(.215, .61, .355, 1) 0s;
+    color: transparent;
+    background: url(http://resources.jsmo.xin/templates/upload/1115/201611/icon.png) no-repeat 10px -243px;
+    width: 50px;
+    height: 50px;
+    margin-left: 0;
+    background-color: rgba(255, 255, 255, .3);
+    border: 0;
+    transition: all .3s ease 0s;
+    border-radius: 0;
+}
+
+.bx-wrapper .bx-controls-direction a:hover i {
+    background: url(http://resources.jsmo.xin/templates/upload/1115/201611/icon.png) no-repeat 10px -278px;
+    background-color: #3d3d3d;
+}
+
+.bx-wrapper .bx-controls-direction a {
+    background-color: transparent;
+    border-radius: 0;
+    width: 50px;
+    top: 48%;
+    right: -40px;
+    border-radius: 0;
+}
+
+#indexPage #mslider .bx-wrapper .bx-controls-direction a.bx-next {
+    right: 0px;
+}
+
+.bx-wrapper .bx-controls-direction a.bx-next i {
+    background: url(http://resources.jsmo.xin/templates/upload/1115/201611/icon.png) no-repeat -38px -243px;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, .4);
+    transition: all .3s ease 0s;
+    border: 0;
+    margin-left: 0;
+}
+
+.bx-wrapper .bx-controls-direction a.bx-next:hover i {
+    background: url(http://resources.jsmo.xin/templates/upload/1115/201611/icon.png) no-repeat -38px -278px;
+    background-color: #3d3d3d;
+}
+
+/*首页案例背景颜色 */
+
+#projectlist .projectitem a:hover img,
+.nobanner #projectlist .projectitem a img {
+    transform: scale(1.1, 1.1);
+}
+
+#indexPage #mproject {
+    background-attachment: fixed;
+    background-color: #fff;
+    height: auto;
+    padding: 100px 0;
+}
+
+#category a {
+    padding: 6px 26px;
+    margin-right: 0px;
+    margin-left: 0px;
+    transition: all 0.3s ease-out 0s;
+    color: #aaa;
+    border: 0px;
+    border-bottom: 1px solid rgba(204, 204, 204, 0);
+}
+
+#category a.active,
+#category a:hover {
+    background: #fff;
+    color: #3d3d3d;
+    border-color: rgba(161, 161, 161, 0);
+}
+
+#sitecontent #newsPage .content #category a.active,
+#category a:hover {
+    color: rgba(61, 61, 61, 0.91);
+}
+
+#header.mini .content {
+    border-bottom: 0px solid rgba(255, 255, 255, 0.2);
+}
+
+/*案例*/
+
+#projectitem_0 {
+    animation-name: fadeInUp;
+    animation-delay: 0.1s;
+}
+
+#projectitem_1 {
+    animation-name: fadeInUp;
+    animation-delay: 0.2s;
+}
+
+#projectitem_2 {
+    animation-name: fadeInUp;
+    animation-delay: 0.3s;
+}
+
+#projectitem_3 {
+    animation-name: fadeInUp;
+    animation-delay: 0.4s;
+}
+
+#projectitem_4 {
+    animation-name: fadeInUp;
+    animation-delay: 0.1s;
+}
+
+#projectitem_5 {
+    animation-name: fadeInUp;
+    animation-delay: 0.2s;
+}
+
+#projectitem_6 {
+    animation-name: fadeInUp;
+    animation-delay: 0.2s;
+}
+
+#projectitem_7 {
+    animation-name: fadeInUp;
+    animation-delay: 0.2s;
+}
+
+#projectitem_8 {
+    animation-name: fadeInUp;
+    animation-delay: 0.2s;
+}
+
+#projectitem_9 {
+    animation-name: fadeInUp;
+    animation-delay: 0.2s;
+}
+
+#indexPage #projectlist .projectitem {
+    height: auto;
+    width: 19%;
+    margin-right: 1%;
+    transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+    overflow: hidden;
+    margin-bottom: 26px;
+    padding-bottom: 100px;
+}
+
+#projectlist .projectitem_4 a img {
+    width: 600px;
+}
+
+#projectlist .projectitem a .project_info p.subtitle,
+.nobanner #projectlist .projectitem a .project_info p.subtitle {
+    margin-top: 0;
+    color: #929292;
+    text-align: left;
+    text-overflow: ellipsis;
+    overflow: visible;
+    white-space: nowrap;
+    margin-left: 0px;
+    padding: 0px;
+    height: 174px;
+}
+
+#projectlist .projectitem a .project_info p.subtitle::after,
+.nobanner #projectlist .projectitem a .project_info p.subtitle::after {
+    content: "";
+    display: block;
+    background-color: #d4d3d0;
+    width: 4px;
+    height: 1px;
+    transition: all 0.6s ease 0s;
+    opacity: 0;
+    margin-top: 260px;
+}
+
+#projectlist .projectitem a:hover .project_info p.subtitle {
+    color: #929292;
+    text-align: left;
+}
+
+#projectlist .projectitem {
+    margin-bottom: 100px;
+    background-color: #fff;
+    width: 24%;
+}
+
+#projectlist .projectitem a:hover .project_info {
+    background-color: rgba(0, 0, 0, 0)
+}
+
+#projectlist .projectitem .project_info p.title {
+    color: #4E4E4E;
+    padding: 10px 0px;
+}
+
+#projectmore {
+    color: #3d3d3d;
+    height: 100px;
+    line-height: 100px;
+    background: #262626;
+    font-family: "HELVETICANEUELTPRO-THEX", "微软雅黑";
+    font-size: 18px;
+}
+
+#projectmore:hover {
+    color: #3d3d3d;
+    height: 100px;
+    line-height: 100px;
+    background: #262626;
+    font-size: 18px;
+}
+
+.content .header p.subtitle {
+    font-size: 15px;
+    margin-top: 5px;
+    color: rgb(165, 165, 165);
+    text-align: center;
+    margin-left: 0%;
+}
+
+#indexPage #mteam .content .header p.subtitle::before {
+    content: " ";
+    width: 26%;
+    height: 1px;
+    background-color: rgba(103, 103, 103, 0.15);
+    display: block;
+    position: absolute;
+    top: 60px;
+    left: 20%;
+}
+
+#indexPage #mteam .content .header p.subtitle::after {
+    content: " ";
+    width: 26%;
+    height: 1px;
+    background-color: rgba(103, 103, 103, 0.15);
+    display: block;
+    position: absolute;
+    top: 60px;
+    left: 54%;
+}
+
+#mpage .content .header p.subtitle {
+    text-align: left;
+    margin-left: 0;
+}
+
+#indexPage #mproject .content .header p.title {
+    font-family: "HELVETICANEUELTPRO-THEX", "微软雅黑";
+    text-align: center;
+    margin-left: 0%;
+    margin-bottom: 12px;
+}
+
+#indexPage #mproject .content .header p.subtitle {
+    text-align: center;
+}
+
+#indexPage #projectlist .projectitem:nth-child(1) a .project_info div {
+    /* margin-left: 24px; */
+    width: 100%;
+    padding-left: 24px;
+    box-sizing: border-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#indexPage #mproject .bx-wrapper .bx-pager.bx-default-pager a {
+    display: none;
+}
+
+#projectlist #projectitem_0.projectitem a .project_info div::after {
+    position: absolute;
+    transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+    content: "01";
+    margin-right: 20px;
+    margin-top: -146px;
+    color: rgba(153, 153, 153, 0.1);
+    right: 0;
+    font-size: 120px;
+    font-family: "HeliosExtThin";
+    opacity: 0;
+}
+
+#projectlist #projectitem_0.projectitem a .project_info:hover div::after {
+    opacity: 0;
+}
+
+#projectlist #projectitem_1.projectitem a .project_info div::after {
+    position: absolute;
+    transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+    content: "02";
+    margin-right: 20px;
+    margin-top: -146px;
+    color: rgba(153, 153, 153, 0.1);
+    right: 0;
+    font-size: 120px;
+    font-family: "HeliosExtThin";
+    opacity: 0;
+}
+
+#projectlist #projectitem_1.projectitem a .project_info:hover div::after {
+    opacity: 0;
+}
+
+#projectlist #projectitem_2.projectitem a .project_info div::after {
+    position: absolute;
+    transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+    content: "03";
+    margin-right: 20px;
+    margin-top: -146px;
+    color: rgba(153, 153, 153, 0.1);
+    right: 0;
+    font-size: 120px;
+    font-family: "HeliosExtThin";
+    opacity: 0;
+}
+
+#projectlist #projectitem_2.projectitem a .project_info:hover div::after {
+    opacity: 0;
+}
+
+#projectlist .projectitem a .project_info .subtitle {
+    text-align: left;
+}
+
+/*inindex-pro*/
+
+#indexPage #projectlist .projectitem a:hover .project_info p.title {
+    color: #464545;
+    font-size: 16px;
+}
+
+#indexPage #projectlist .projectitem a .project_info p.subtitle {
+    display: none;
+}
+
+#indexPage #projectlist .projectitem a .project_info p.description {
+    display: block;
+    color: #9a9a9a;
+    padding: 0px;
+    width: 100%;
+    text-align: left;
+    font-size: 13px;
+    line-height: 22px;
+    margin-top: 2%;
+    height: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+#indexPage #mproject .content .wrapper {
+    margin: 0%;
+}
+
+#indexPage #projectlist .projectitem:nth-child(1) {
+    width: 38.6%;
+    box-sizing: border-box;
+}
+
+/* #indexPage #projectlist .projectitem:nth-child(3) a .project_info {top: -420px;}
+
+#indexPage #projectlist .projectitem:nth-child(3) a .project_img{position: absolute; top: 110px;}
+
+#indexPage #projectlist .projectitem:nth-child(6) a .project_info {top: -420px;}
+
+#indexPage #projectlist .projectitem:nth-child(6) a .project_img{position: absolute;top: 110px;}
+
+*/
+
+#indexPage #projectlist .projectitem:nth-child(3n + 4) {
+    margin-right: 0%;
+}
+
+#indexPage #projectlist .projectitem:nth-child(3n + 3) {
+    padding-top: 100px;
+    padding-bottom: 0;
+}
+
+#indexPage #projectlist .projectitem:nth-child(3n + 3) .project_info {
+    height: 100px;
+    height: 88px;
+}
+
+#indexPage #projectlist .projectitem:nth-child(7)~.projectitem {
+    padding-top: 0;
+    padding-bottom: 100px;
+}
+
+#indexPage #projectlist .projectitem:nth-child(7)~.projectitem .project_info {
+    height: 100%;
+}
+
+#indexPage #projectlist .projectitem:nth-child(7)~.projectitem:nth-child(5n + 2) {
+    margin-right: 0;
+}
+
+#indexPage #projectlist .projectitem:nth-child(7)~.projectitem:nth-child(3n + 4) {
+    margin-right: 1%;
+}
+
+/* #indexPage #projectlist .projectitem:nth-child(7)~.projectitem:not(:nth-child(2n)) {
+
+    padding-top: 0;
+
+    padding-bottom: 100px;
+
+}
+
+
+
+#indexPage #projectlist .projectitem:nth-child(7)~.projectitem:nth-child(2n) .project_info {
+
+    height: 100px;
+
+}
+
+
+
+#indexPage #projectlist .projectitem:nth-child(7)~.projectitem:nth-child(2n) {
+
+    padding-top: 100px;
+
+    padding-bottom: 0;
+
+} */
+
+/* #indexPage #projectlist .projectitem:nth-child(7) ~ .projectitem:nth-child(3n + 3) {
+
+    padding-top: 0;
+
+    padding-bottom: 100px;
+
+}
+
+#indexPage #projectlist .projectitem:nth-child(7) ~ .projectitem:nth-child(5n + 1) .project_info,
+
+#indexPage #projectlist .projectitem:nth-child(7) ~ .projectitem:nth-child(7n + 2) .project_info{
+
+    height: 100px;
+
+}
+
+#indexPage #projectlist .projectitem:nth-child(7) ~ .projectitem:nth-child(5n + 1),
+
+#indexPage #projectlist .projectitem:nth-child(7) ~ .projectitem:nth-child(7n + 2) {
+
+    padding-top: 100px;
+
+    padding-bottom: 0;
+
+} */
+
+#indexPage #mproject .content .header p.subtitle::before {
+    content: " ";
+    width: 26%;
+    height: 1px;
+    background-color: rgba(103, 103, 103, 0.15);
+    display: block;
+    position: absolute;
+    top: 60px;
+    left: 20%;
+}
+
+#indexPage #mproject .content .header p.subtitle::after {
+    content: " ";
+    width: 26%;
+    height: 1px;
+    background-color: rgba(103, 103, 103, 0.15);
+    display: block;
+    position: absolute;
+    top: 60px;
+    left: 54%;
+}
+
+#indexPage #mproject #category a::after {
+    content: " ";
+    height: 4px;
+    width: 4px;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.16);
+    display: block;
+    top: -9px;
+    position: relative;
+    left: -16px;
+    z-index: 10;
+}
+
+#indexPage #mproject a.more {
+    margin-top: 60px;
+    position: relative;
+    vertical-align: middle;
+    width: 600px;
+    background-color: rgba(0, 0, 0, 0);
+    height: 46px;
+    border: 1px #767676 solid;
+    line-height: 46px;
+    z-index: 10;
+}
+
+/* 产品数字*/
+
+#projectlist .projectitem:nth-child(2)::before {
+    content: "02";
+    display: block;
+    font-size: 72px;
+    color: #fff;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    /* IE 9 */
+    -moz-transform: rotate(90deg);
+    /* Firefox */
+    -webkit-transform: rotate(90deg);
+    /* Safari 和 Chrome */
+    -o-transform: rotate(90deg);
+    /* Opera */
+    position: absolute;
+    right: 0;
+    bottom: 16px;
+    transition: all 0.3s ease-out 0s;
+    right: 14px;
+}
+
+#indexPage #projectlist .projectitem:nth-child(2):hover::before {
+    bottom: 126px;
+    z-index: 1;
+}
+
+#projectlist .projectitem:nth-child(2)::after {
+    content: "";
+    display: block;
+    width: 3px;
+    height: 26px;
+    background-color: #fff;
+    position: absolute;
+    bottom: 70px;
+    z-index: 1;
+    right: 50px;
+    transition: all 0.2s ease-out 0s;
+}
+
+#indexPage #projectlist .projectitem:nth-child(2):hover::after {
+    bottom: 94px;
+}
+
+#projectlist .projectitem:nth-child(4)::before {
+    content: "04";
+    display: block;
+    font-size: 72px;
+    color: #fff;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    /* IE 9 */
+    -moz-transform: rotate(90deg);
+    /* Firefox */
+    -webkit-transform: rotate(90deg);
+    /* Safari 和 Chrome */
+    -o-transform: rotate(90deg);
+    /* Opera */
+    position: absolute;
+    right: 0;
+    bottom: 16px;
+    transition: all 0.3s ease-out 0s;
+    right: 14px;
+}
+
+#indexPage #projectlist .projectitem:nth-child(4):hover::before {
+    bottom: 126px;
+    z-index: 1;
+}
+
+#projectlist .projectitem:nth-child(4)::after {
+    content: "";
+    display: block;
+    width: 3px;
+    height: 26px;
+    background-color: #fff;
+    position: absolute;
+    bottom: 70px;
+    z-index: 1;
+    right: 50px;
+    transition: all 0.2s ease-out 0s;
+}
+
+#indexPage #projectlist .projectitem:nth-child(4):hover::after {
+    bottom: 94px;
+}
+
+#projectlist .projectitem:nth-child(5)::before {
+    content: "05";
+    display: block;
+    font-size: 72px;
+    color: #fff;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    /* IE 9 */
+    -moz-transform: rotate(90deg);
+    /* Firefox */
+    -webkit-transform: rotate(90deg);
+    /* Safari 和 Chrome */
+    -o-transform: rotate(90deg);
+    /* Opera */
+    position: absolute;
+    right: 0;
+    bottom: 16px;
+    transition: all 0.3s ease-out 0s;
+    right: 14px;
+}
+
+#indexPage #projectlist .projectitem:nth-child(5):hover::before {
+    bottom: 126px;
+    z-index: 1;
+}
+
+#projectlist .projectitem:nth-child(5)::after {
+    content: "";
+    display: block;
+    width: 3px;
+    height: 26px;
+    background-color: #fff;
+    position: absolute;
+    bottom: 70px;
+    z-index: 1;
+    right: 50px;
+    transition: all 0.2s ease-out 0s;
+}
+
+#indexPage #projectlist .projectitem:nth-child(5):hover::after {
+    bottom: 94px;
+}
+
+#projectlist .projectitem:nth-child(7)::before {
+    content: "07";
+    display: block;
+    font-size: 72px;
+    color: #fff;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    /* IE 9 */
+    -moz-transform: rotate(90deg);
+    /* Firefox */
+    -webkit-transform: rotate(90deg);
+    /* Safari 和 Chrome */
+    -o-transform: rotate(90deg);
+    /* Opera */
+    position: absolute;
+    right: 0;
+    bottom: 16px;
+    transition: all 0.3s ease-out 0s;
+    right: 14px;
+}
+
+#indexPage #projectlist .projectitem:nth-child(7):hover::before {
+    bottom: 126px;
+    z-index: 1;
+}
+
+#projectlist .projectitem:nth-child(7)::after {
+    content: "";
+    display: block;
+    width: 3px;
+    height: 26px;
+    background-color: #fff;
+    position: absolute;
+    bottom: 70px;
+    z-index: 1;
+    right: 50px;
+    transition: all 0.2s ease-out 0s;
+}
+
+#indexPage #projectlist .projectitem:nth-child(7):hover::after {
+    bottom: 94px;
+}
+
+#projectlist .projectitem:nth-child(3)::before {
+    content: "03";
+    display: block;
+    font-size: 72px;
+    color: #fff;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    /* IE 9 */
+    -moz-transform: rotate(90deg);
+    /* Firefox */
+    -webkit-transform: rotate(90deg);
+    /* Safari 和 Chrome */
+    -o-transform: rotate(90deg);
+    /* Opera */
+    position: absolute;
+    right: 0;
+    bottom: -84px;
+    transition: all 0.3s ease-out 0s;
+    right: 14px;
+}
+
+#indexPage #projectlist .projectitem:nth-child(3):hover::before {
+    bottom: 32px;
+    z-index: 1;
+}
+
+#projectlist .projectitem:nth-child(3)::after {
+    content: "";
+    display: block;
+    width: 3px;
+    height: 26px;
+    background-color: #fff;
+    position: absolute;
+    bottom: -28px;
+    z-index: 1;
+    right: 50px;
+    transition: all 0.2s ease-out 0s;
+}
+
+#indexPage #projectlist .projectitem:nth-child(3):hover::after {
+    bottom: 0px;
+}
+
+#projectlist .projectitem:nth-child(6)::before {
+    content: "06";
+    display: block;
+    font-size: 72px;
+    color: #fff;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    /* IE 9 */
+    -moz-transform: rotate(90deg);
+    /* Firefox */
+    -webkit-transform: rotate(90deg);
+    /* Safari 和 Chrome */
+    -o-transform: rotate(90deg);
+    /* Opera */
+    position: absolute;
+    right: 0;
+    bottom: -84px;
+    transition: all 0.3s ease-out 0s;
+    right: 14px;
+}
+
+#indexPage #projectlist .projectitem:nth-child(6):hover::before {
+    bottom: 32px;
+    z-index: 1;
+}
+
+#projectlist .projectitem:nth-child(6)::after {
+    content: "";
+    display: block;
+    width: 3px;
+    height: 26px;
+    background-color: #fff;
+    position: absolute;
+    bottom: -28px;
+    z-index: 1;
+    right: 50px;
+    transition: all 0.2s ease-out 0s;
+}
+
+#indexPage #projectlist .projectitem:nth-child(6):hover::after {
+    bottom: 0px;
+}
+
+/* productnav */
+
+#sitecontent .npagePage #category a {
+    border: none;
+    border-bottom: none;
+    padding: 0px 20px;
+    font-size: 14px;
+    text-align: center;
+}
+
+#sitecontent .npagePage #category a::after {
+    content: " ";
+    height: 4px;
+    width: 4px;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.16);
+    display: block;
+    top: -9px;
+    position: relative;
+    left: -16px;
+    z-index: 10;
+}
+
+/*inindex-pro-titlelin*/
+
+/*首页背景不加透明蒙层 */
+
+/*n首页关于我们 */
+
+#indexPage #mpage .content {
+    margin: 0 auto;
+    width: 1280px;
+}
+
+#indexPage #mpage .wrapper li .fimg {
+    display: block;
+    height: 534px;
+    width: 670px;
+    padding-bottom: 0px;
+    position: absolute;
+    z-index: 3;
+    left: 54%;
+    top: -150px;
+}
+
+#indexPage #mpage a.more {
+    background-color: rgba(255, 255, 255, 0);
+    border: 0px
+}
+
+/*首页服务背景层 */
+
+#contactform p textarea.inputtxt {
+    height: 50px;
+    float: none;
+    line-height: 18px;
+    margin: 0px;
+}
+
+#contactform p .inputtxt {
+    border: none;
+    margin-bottom: 5px;
+    background: none;
+    color: #D6D6D6;
+    ;
+    width: 320px;
+    float: left;
+    border-bottom: 1px solid rgba(231, 228, 228, 0.22);
+    margin: 40px 0 0 40px;
+}
+
+#contactform p {
+    border-bottom: 0px;
+    padding-top: 0px;
+    width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#indexPage #mteam .description {
+    color: #909090;
+    background-color: #fff;
+    padding: 0px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0);
+    height: 48px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+#indexPage #mteam .header img {
+    width: 360px;
+    height: 430px;
+    border-radius: 0;
+    margin: 6px auto 24px auto;
+}
+
+#indexPage #mteam .bx-wrapper .bx-pager ::after {
+    content: "";
+    width: 1000px;
+    height: 1px;
+    background: #d2d2d2;
+    margin: 20px 0;
+    position: absolute;
+}
+
+.content .header p.title {
+    font-family: HELVETICANEUELTPRO-THEX, 微软雅黑;
+    font-size: 30px;
+    text-align: center;
+    color: rgb(68, 68, 68);
+}
+
+#indexPage #mteam .content .header p.title {
+    color: rgb(68, 68, 68);
+    margin-bottom: 12px;
+}
+
+.npagePage .content .header p.title {
+    text-align: center;
+    margin-left: 0px;
+}
+
+.npagePage .content .header p.subtitle {
+    text-align: center;
+    margin-left: 0px;
+}
+
+#newsPage .content .header p {
+    text-align: center;
+}
+
+#indexPage #mteam .slider_control a i:hover {
+    color: #3d3d3d;
+}
+
+.teamitem a div.wrap span {
+    background: #8e8e8e;
+}
+
+.teamitem a div.wrap {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.npagePage #teamlist .teamitem a {
+    width: 320px;
+    height: auto;
+    margin-left: 0%
+}
+
+.npagePage #teamlist .teamitem a img {
+    width: 100%;
+    height: auto;
+    transition: all 0.6s ease 0s;
+}
+
+.npagePage #teamlist .teamitem:hover a img {
+    transform: scale(1.1, 1.1);
+}
+
+/*首页幻灯高度*/
+
+#indexPage #mslider {
+    height: 400px;
+}
+
+.bx-wrapper .bx-pager.bx-default-pager a {
+    width: 20px;
+    height: 4px;
+    margin: 0px 5px;
+    border-radius: 6px;
+    border: 1px solid #C8C8C8;
+}
+
+#indexPage #mslider {
+    height: 0
+}
+
+#shares a {
+    background: transparent;
+}
+
+#shares a#gotop {
+    margin-top: 1px;
+    background-color: rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-out 0s;
+}
+
+#shares a#gotop:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.bx-wrapper .bx-pager.bx-default-pager a {
+    width: 50px;
+    height: 1px;
+}
+
+#indexPage #mslider ul li p {
+    color: #5d5d5d;
+}
+
+#mslider .sliderArrow {
+    position: absolute;
+    bottom: 120px;
+    z-index: 2;
+    animation: fadeInUp 0.6s cubic-bezier(0.445, 0.05, 0.55, 0.95) 0.2s infinite alternate;
+    -moz-animation: fadeInUp 0.6s cubic-bezier(0.445, 0.05, 0.55, 0.95) 0.2s infinite alternate;
+    -webkit-animation: fadeInUp 0.6s cubic-bezier(0.445, 0.05, 0.55, 0.95) 0.2s infinite alternate;
+    -o-animation: fadeInUp 0.6s cubic-bezier(0.445, 0.05, 0.55, 0.95) 0.2s infinite alternate;
+    display: block;
+    left: 50%;
+    width: 29px;
+    height: 25px;
+    margin-left: -16px;
+    color: #9b9b9b;
+    font-size: 48px;
+}
+
+/*新导航*/
+
+/*在线咨询*/
+
+#olx_head {
+    background: #3d3d3d;
+    border-radius: 0px;
+}
+
+#olx_qq li a:hover i {
+    color: #3d3d3d;
+}
+
+#olx_qq li a:hover {
+    padding: 18px 30px;
+}
+
+.bx-wrapper .bx-pager.bx-default-pager a:hover,
+.bx-wrapper .bx-pager.bx-default-pager a.active,
+.bx-wrapper .bx-pager.bx-default-pager a:focus {
+    border: 1px solid #3d3d3d;
+    background-color: #3d3d3d;
+}
+
+.bx-wrapper .bx-pager.bx-default-pager a {
+    margin: 0px 1px;
+    border-radius: 0px;
+    border: 1px solid rgba(143, 143, 143, 0.3);
+}
+
+/*首页关于我们*/
+
+#indexPage #mpage .wrapper li .fimg {}
+
+#mpage .content .header {
+    width: 40%;
+    float: left;
+    padding-bottom: 0;
+    padding-top: 40px;
+}
+
+#mpage .module-content .description {
+    max-height: 108px;
+    height: auto;
+    line-height: 28px;
+    padding: 40px 0 0 0;
+    float: none;
+    width: 540px;
+    text-align: left;
+    z-index: 10;
+    position: relative;
+    transition: all 0.6s ease-out;
+    color: #8c8c8c;
+    font-size: 13px;
+}
+
+#indexPage #mpage .module-content .description {
+    width: 490px;
+}
+
+#indexPage #mpage a {
+    width: 10%;
+    float: none;
+    line-height: 40px;
+    height: 40px;
+    position: relative;
+    z-index: 10;
+    top: 340px;
+    left: -120px;
+}
+
+#indexPage #mpage a::before {
+    content: "";
+    width: 230px;
+    height: 1px;
+    background-color: #e2e2e2;
+    display: block;
+    margin-left: 30px;
+}
+
+#indexPage #mpage a.more {
+    text-indent: 0px;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.58);
+}
+
+#indexPage #mpage a.more:hover {
+    color: rgba(0, 0, 0, 0.82);
+}
+
+/*首页联系*/
+
+#mcontact .content>.header {
+    animation-name: fadeInUp;
+}
+
+#indexPage #mcontact .content {
+    width: 100%;
+    height: 823px;
+}
+
+#contactinfo {
+    width: 35%;
+    padding-left: 10%;
+    margin-bottom: 60px;
+}
+
+#contactform.fr {
+    background-color: #46474e;
+    width: 100%;
+    padding: 0;
+    margin-right: 0;
+}
+
+#contactform p .inputsub {
+    width: 280px;
+    height: 56px;
+    line-height: 52px;
+    background-color: rgba(186, 186, 186, 0);
+    border: 2px solid #6D6D6D;
+    margin-top: 10px;
+    padding: 0;
+    color: #fff;
+    margin-bottom: 100px;
+}
+
+#contactform p .inputsub:hover {
+    background-color: rgba(186, 186, 186, 0.37);
+    border: 2px solid rgba(134, 134, 134, 0);
+    color: #E8E8E8;
+}
+
+#contactform .inputtxt.active {
+    border-color: #424242
+}
+
+#indexPage #mcontact .header p {
+    text-align: center;
+    padding-left: 0;
+    margin: 0;
+}
+
+#indexPage #mcontact .content .fw {
+    width: 100%;
+}
+
+#contactinfo h3 {
+    color: #3d3d3d;
+    width: 342px;
+    padding-right: 60px
+}
+
+#contactinfo div a {
+    background: #CCC;
+}
+
+#contactinfo div a:hover {
+    background: #7f7f84;
+}
+
+/*首页新闻*/
+
+#indexPage .newsbody .description {
+    display: block;
+    width: 92%;
+    line-height: 24px;
+    font-size: 13px;
+    color: #9d9d9d;
+    margin: inherit;
+    height: 42px;
+    overflow: hidden;
+    margin-top: 4px;
+}
+
+#indexPage #mteam {
+    background-color: #fff;
+    height: 660px;
+    background-attachment: inherit;
+}
+
+#indexPage #mteam .content .content_list .header {
+    padding-top: 200px;
+    animation-name: fadeInUp;
+}
+
+#indexPage #mteam .content>.header {
+    top: 20px;
+    display: block;
+    position: absolute;
+    width: 100%;
+    animation-name: fadeInLeft;
+}
+
+/*案例*/
+
+#indexPage #mproject .content>.header {
+    animation-name: fadeInLeft;
+    animation-delay: 0.1s;
+}
+
+#projectinfo {
+    width: 340px;
+    float: right;
+    padding: 0px 50px;
+    margin-left: 0px;
+    position: relative;
+}
+
+#projectwrap.fw {
+    width: 100%;
+}
+
+#projectwrap {
+    padding-top: 80px;
+}
+
+#projectbody {
+    max-width: 100%;
+    margin: 0px auto;
+    width: calc(100% - 490px);
+    float: left;
+    padding: 0 48px 0 0;
+    border-right: 1px solid #ECECEC;
+    padding-bottom: 60px;
+}
+
+#projectimages li img {
+    display: block;
+    float: none;
+    max-width: 100%;
+    margin: 0px auto;
+}
+
+#projectinfo .description a {
+    background: #3d3d3d;
+    color: #fff;
+    width: 340px;
+}
+
+#projectinfo .description a:hover {
+    background: #3d3d3d;
+    color: #fff;
+}
+
+#plheader {
+    padding-bottom: 22px;
+}
+
+.teamitem {
+    height: auto;
+}
+
+.teamitem .teaminfo {
+    text-align: left;
+    height: auto;
+    overflow: hidden;
+    transition: all 0.6s ease 0s;
+}
+
+.Pageteam .wrap .teamitem:hover .teaminfo {
+    height: auto;
+}
+
+.teamitem .teaminfo .description::after {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 1px;
+    background-color: #ccc;
+    transition: all 0.6s ease 0s;
+    margin-top: 26px;
+    opacity: 0;
+    position: absolute;
+}
+
+.teamitem:hover .teaminfo .description::after {
+    width: 320px;
+    opacity: 1;
+}
+
+.teamitem .teaminfo .description {
+    margin-top: 22px;
+}
+
+#indexPage #mproject .bx-wrapper .bx-controls-direction a {
+    margin: -60px -20px;
+    background: rgb(201, 201, 201);
+}
+
+#indexPage #mproject .bx-wrapper .bx-controls-direction a:hover {
+    background: #3d3d3d;
+}
+
+.teamitem .title a {
+    color: #3d3d3d;
+}
+
+/*新*/
+
+.npagePage #projectlist .wrapper {
+    width: 90%;
+}
+
+#indexPage #mproject .content .wrapper {}
+
+.content .header {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+#newsPage .content .header {
+    padding-bottom: 22px;
+}
+
+#indexPage #mproject .bx-wrapper .bx-pager {
+    bottom: -9%;
+    text-align: right;
+}
+
+#indexPage #mpage .content {
+    margin-top: 0;
+    top: 0;
+}
+
+#indexPage #mteam .content {
+    margin-top: -17%;
+}
+
+#moduleControl a.moduleCItem {
+    border-radius: 0;
+    height: 1px;
+    margin-bottom: 10px;
+    width: 10px;
+    border: 1px solid transparent;
+    background-color: #DEDEDE;
+}
+
+.module-content .description {
+    width: 420px;
+    text-align: left;
+}
+
+#projectlist .projectitem a .project_info p
+/*新闻*/
+
+#indexPage .module .bgmask {
+    background-color: transparent;
+}
+
+#indexPage #mslider ul li p.title {
+    font-size: 42px;
+    line-height: 60px;
+    height: 60px;
+    text-align: left;
+    padding: 0px 110px 30px;
+    margin: 0 1800px 0px 20px;
+    font-family: "HELVETICANEUELTPRO-THEX", "微软雅黑";
+    width: 500px;
+}
+
+#indexPage #mslider ul li p.subtitle {
+    font-size: 14px;
+    height: 25px;
+    transition-delay: 0.2s;
+    text-align: left;
+    padding: 12px 110px;
+    width: auto;
+    margin: 1px 1800px 0px 20px;
+    color: #A1A1A1;
+    font-family: "HELVETICANEUELTPRO-THEX", "微软雅黑";
+    line-height: 24px;
+}
+
+#projecttags a:hover {
+    color: #fff;
+    background: #3d3d3d;
+}
+
+#projectib .projectitem a .project_info p.title {
+    color: #A5A5A5;
+}
+
+#projectib .projectitem a .project_info p.subtitle {
+    color: rgba(80, 80, 80, 0.69);
+}
+
+#projectib .projectitem a .project_info {
+    background-color: #fff;
+    padding: 6px 0 28px 0;
+}
+
+#indexPage #mproject .bx-wrapper .bx-controls-direction {
+    display: inline;
+}
+
+#projectinfo::after {
+    position: absolute;
+    content: "";
+    top: 10px;
+    left: -2px;
+    width: 4px;
+    height: 54px;
+    background: #3d3d3d;
+}
+
+#indexPage #mteam .bx-wrapper .bx-pager {
+    bottom: -6%;
+    display: block;
+    left: 238px;
+}
+
+.Pageservice #servicelist .serviceitem div p.title {
+    line-height: 26px;
+    transition: all 0.6s ease 0s;
+    text-align: center;
+    width: 260px;
+    height: 31px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.Pageservice #servicelist .serviceitem:hover div p.title {
+    padding-top: 20px;
+}
+
+#projectinfo .header .description {
+    color: #939393;
+}
+
+#projectlist .projectitem a:hover .project_info::after {
+    width: 100%;
+}
+
+#projectlist .projectitem a .project_info p.title,
+.nobanner #projectlist .projectitem a .project_info p.title {
+    color: #565656;
+    padding: 10px 0px 5px;
+    text-align: left;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    font-family: "HELVETICANEUELTPRO-THEX", "微软雅黑";
+}
+
+#projectlist .projectitem a .project_info p.title::after,
+.nobanner #projectlist .projectitem a .project_info p.title::after {
+    position: absolute;
+    transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+    content: "";
+    margin-right: 20px;
+    margin-top: -56px;
+    color: rgba(153, 153, 153, 0.1);
+    right: 0;
+    font-size: 120px;
+    font-family: "HeliosExtThin";
+}
+
+#projectlist .projectitem a .project_info div {
+    position: absolute;
+    height: 100px;
+    width: 100%;
+    bottom: 0px;
+    margin-top: 0;
+    top: auto;
+    background-color: #fff;
+    transition: all 0.3s ease-out 0s;
+    background-color: transparent;
+    z-index: 1
+}
+
+#indexPage #mproject .content #category a:hover {
+    background: rgba(61, 61, 61, 0);
+    color: #3d3d3d;
+}
+
+/*n首页新闻*/
+
+#indexPage #mnews #newslist .newstitem .newsbody .title {
+    margin-top: 122px;
+    font-size: 16px;
+    color: #1a1a1a;
+}
+
+#indexPage #mnews .content {
+    width: 90%;
+    margin: 0 auto;
+}
+
+#indexPage #mnews .content .header p.title {
+    margin-left: 0%;
+    margin-bottom: 12px;
+}
+
+#indexPage #mnews .content .header p.subtitle::before {
+    content: " ";
+    width: 26%;
+    height: 1px;
+    background-color: rgba(103, 103, 103, 0.15);
+    display: block;
+    position: absolute;
+    top: 60px;
+    left: 20%;
+}
+
+#indexPage #mnews .content .header p.subtitle::after {
+    content: " ";
+    width: 26%;
+    height: 1px;
+    background-color: rgba(103, 103, 103, 0.15);
+    display: block;
+    position: absolute;
+    top: 60px;
+    left: 54%;
+}
+
+#indexPage .newstitem a.details {
+    display: block;
+    border: 1px rgba(255, 0, 0, 0) solid;
+    padding: 0px;
+    width: 100px;
+    height: 30px;
+    margin: 0;
+    margin-top: -66px;
+    font-size: 14px;
+    text-indent: 0px;
+    border-radius: 0px;
+    text-align: left;
+    color: #b7b7b7;
+    transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+    position: absolute
+}
+
+#indexPage .newstitem .newsbody .date .md {
+    position: relative;
+    left: 94px;
+    font-size: 14px;
+    color: #bfbfbf;
+}
+
+#indexPage .newstitem .newsbody .date .md span {
+    display: none
+}
+
+#indexPage .newstitem .newsbody .year {
+    font-size: 32px;
+    margin-left: -34px;
+    color: #bfbfbf;
+}
+
+/* ------- */
+
+#indexPage #newslist .newstitem:hover .newsimg {
+    opacity: 1;
+    width: 100%;
+    margin-top: 76px;
+    margin-top: 0px;
+    top: 0px;
+    outline-offset: -10px;
+    outline: 1px solid rgba(255, 255, 255, 0.30);
+}
+
+#indexPage #newslist .newstitem .newsimg {
+    width: 100%;
+    transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+    opacity: 0;
+    outline: 0px solid rgba(255, 255, 255, 0.30);
+    display: block;
+    margin: 0 auto;
+    top: 8px;
+}
+
+#indexPage #newslist .newstitem .news_wrapper {
+    transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+    opacity: 1
+}
+
+#indexPage #newslist .newstitem:hover .news_wrapper {
+    opacity: 0;
+}
+
+#indexPage #newslist .newstitem:hover .news_wrapper .date {
+    color: rgba(0, 0, 0, 0);
+}
+
+#indexPage #newslist .newstitem:hover .news_wrapper .title {
+    color: rgba(0, 0, 0, 0);
+}
+
+#indexPage #newslist .newstitem:hover .news_wrapper .description {
+    color: rgba(0, 0, 0, 0);
+}
+
+#indexPage .newstitem::before {
+    content: '';
+    display: block;
+    width: 1px;
+    height: 1px;
+    position: relative;
+    left: 0px;
+    top: 306px;
+    background-color: #fff;
+    transition: all 0.3s cubic-bezier(0.215, 0.6, 0.355, 1) 0s;
+    z-index: 20px;
+}
+
+#indexPage .newstitem:hover::before {
+    width: 40px;
+    background-color: rgba(255, 255, 255, 0.59);
+    display: block;
+    z-index: 10;
+    display: none
+}
+
+#indexPage .newstitem:hover a.details {
+    margin-left: 47px;
+    color: #fff;
+    display: none
+}
+
+#indexPage #mpage .content,
+#indexPage #mpage .module-content,
+#indexPage #mpage .wrapper,
+#indexPage #mpage .slider,
+#indexPage #mpage .wrapper li,
+#indexPage #mpage .wrapper li .fimg {
+    padding-bottom: 220px;
+}
+
+#indexPage #mpage .wrapper li,
+#indexPage #mpage .slider,
+#indexPage #mpage .content {
+    padding-bottom: 70px;
+}
+
+#indexPage #mpage .content .header p.subtitle::after {
+    position: absolute;
+    content: "";
+    height: 1px;
+    background: rgba(185, 185, 185, 0.27);
+    margin: 22px 50% 0;
+    width: 270px;
+    float: none;
+    text-align: left;
+    left: -500px;
+    top: 142px;
+    display: block;
+    transition: all ease-out .3s;
+    z-index: 10;
+}
+
+#mpage .module-content .description {
+    top: 150px;
+    position: absolute
+}
+
+#indexPage #servicelist .serviceitem {
+    width: 80%;
+    background-color: transparent;
+    padding: 30px 0 0;
+    transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+
+#pages {
+    padding: 60px 0 100px;
+}
+
+#indexPage #mpartner .wrapper ul li a {
+    transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+    position: relative;
+    top: 0px;
+    width: 112px;
+    height: 86px;
+    margin-right: 8px;
+}
+
+#indexPage #mpartner .wrapper ul li a:hover {
+    box-shadow: 0px 10px 26px rgba(0, 0, 0, .1);
+    top: -10px;
+}
+
+#indexPage #mpartner .wrapper ul li {
+    margin: 0px 0 20px 0px;
+    background-color: transparent;
+}
+
+#indexPage #mpartner .bx-viewport {
+    padding-bottom: 20px;
+    padding-left: 20px;
+    height: 80px;
+}
+
+#mpartner .content .header {
+    padding-bottom: 2%;
+    width: 100%;
+    animation-name: fadeInLeft;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+#moduleControl a.moduleCItem:hover,
+#moduleControl a.moduleCItem.active {
+    background-color: #3d3d3d;
+    border: 1px solid #3d3d3d;
+}
+
+@keyframes mymove {
+    0% {
+        transform: scale(1.2, 1.2)
+    }
+    100% {
+        transform: scale(1, 1)
+    }
+}
+
+#banner div {
+    animation: pulse 20s;
+    transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+
+.postbody {
+    color: #838383;
+}
+
+#indexPage #mteam .summary p.title {
+    font-family: "HELVETICANEUELTPRO-THEX", "微软雅黑";
+    color: #474747;
+    font-size: 22px;
+}
+
+#indexPage #mteam .summary p.title::after {
+    content: "";
+    display: block;
+    width: 2px;
+    height: 1px;
+    background-color: #ddd;
+    position: absolute;
+    left: 14.5%;
+    top: 58%;
+    transition: all 0.6s ease 0s;
+    opacity: 0;
+}
+
+#indexPage #mteam .summary:hover p.title::after {
+    width: 60px;
+    background-color: #ddd;
+    opacity: 1;
+}
+
+/* -------- */
+
+#indexPage #mnews .content .header {
+    display: block;
+    padding-bottom: 0px;
+    animation-name: fadeInLeft;
+    /* position: absolute;
+
+    top: -220px; */
+}
+
+/* -------- */
+
+#indexPage #mnews .content {
+    height: 410px;
+    /* top: 50%; 
+
+    margin-top: -205px; */
+}
+
+/* -------- */
+
+#indexPage #newslist {
+    margin: 0 auto;
+    position: relative;
+    /* top: 300px; */
+    background-color: #fff;
+    /* height: 360px; */
+    /* overflow: hidden */
+}
+
+#indexPage #mteam .summary p {
+    text-align: left;
+    padding-left: 40px;
+    transition: all 0.6s ease 0s;
+    margin-left: 0px
+}
+
+#indexPage .newsimg,
+#newslist .separator {
+    display: none
+}
+
+#indexPage #newslist .newstitem {
+    float: left;
+    display: block;
+    width: 21.75%;
+    line-height: 30px;
+    margin-right: 1.6%;
+    margin-left: 1.6%;
+    height: 340px;
+}
+
+#indexPage .newstitem .newsbody {
+    display: block;
+    max-width: 100%;
+    vertical-align: auto;
+    width: 100%;
+    transition: all 0.3s ease 0s;
+}
+
+#indexPage .newstitem:hover .newsbody {}
+
+#indexPage .newstitem .newsbody::after {
+    position: absolute;
+    content: "";
+    width: 1px;
+    height: 60px;
+    background: rgba(12, 12, 12, 0.07);
+    transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+    top: 305px;
+    left: 0px;
+    opacity: 1;
+    z-index: 20;
+}
+
+#indexPage .newstitem:hover .newsbody::after {
+    opacity: 0;
+}
+
+#newslist .newstitem .newsbody .date {
+    position: absolute;
+    top: 20px;
+    font-weight: inherit;
+    font-family: Arial;
+    color: #B0B0B0;
+    margin-bottom: 0;
+    display: block;
+    padding: 0;
+    float: none;
+    transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+
+#teambody .theader .title {
+    font-size: 24px;
+}
+
+#indexPage #mteam .summary p.title a {
+    color: #1a1a1a;
+    font-size: 24px;
+}
+
+#newslist .newstitem .newsbody .title {
+    font-size: 16px;
+    color: #7b7b7b;
+    display: inline-block;
+    line-height: 18px;
+    width: 280px;
+    overflow: hidden;
+    height: 30px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    float: none;
+    transition: all 0.1s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+
+#newslist .newstitem.left a.newscontent,
+#newslist .newstitem.right a.newscontent {
+    padding: 0;
+    text-align: left
+}
+
+#newslist .news_wrapper {
+    background-color: transparent;
+    width: 100%;
+}
+
+#newslist .newstitem a.newscontent:hover .news_wrapper {
+    background-color: transparent;
+    width: 100%;
+}
+
+.newstitem:hover #newsPage #newslist .newsbody {
+    margin-left: 20px;
+}
+
+#newslist .newstitem.left a.newscontent:hover,
+#newslist .newstitem.right a.newscontent:hover {
+    padding: 0
+}
+
+#newslist .newstitem.right a.newscontent .newsimg {
+    left: 0
+}
+
+#newslist .news_wrapper::before {
+    height: 0
+}
+
+/*news list*/
+
+#newsPage #newslist {
+    width: 1180px;
+    height: auto
+}
+
+#newsPage #newslist .wrapper {
+    margin-right: 0px;
+    width: auto;
+    height: auto
+}
+
+#newsPage #newslist .newstitem {
+    width: 100%;
+    height: 181px;
+    float: left;
+    margin-bottom: 60px
+}
+
+#newsPage #newslist .newstitem .news_wrapper {
+    width: 870px;
+}
+
+#newsPage #newslist .newstitem .newsbody::after {
+    margin-top: 22px;
+}
+
+#newsPage #newslist .newstitem .newsbody .title {
+    top: -4px
+}
+
+#newsPage #newslist .newstitem .newsbody .description::after {
+    margin: 0;
+    position: absolute;
+    left: 0;
+    top: 128px;
+    content: "";
+    width: 0px;
+    height: 32px;
+    background: #3d3d3d;
+    transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+    z-index: -1;
+}
+
+#newsPage #newslist .newstitem .newsbody .date {
+    display: block;
+    padding: 0;
+    float: none;
+    position: relative;
+    top: 170px;
+}
+
+/**/
+
+/*新闻*/
+
+/* -------- */
+
+#indexPage #mnews a.more {
+    display: block;
+    width: 600px;
+    height: 46px;
+    line-height: 46px;
+    border: 1px #767676 solid;
+    position: relative;
+    /* top: 670px; */
+    background-color: #fff;
+    z-index: 10;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#indexPage #mnews a.more::after {
+    content: "";
+    display: block;
+    width: 90%;
+    height: 3px;
+    background-color: #767676;
+    /* margin-left: 5%; */
+    position: absolute;
+    -webkit-margin-before: -1px;
+    transition: all 0.3s ease 0s;
+    /* margin-top: -48px; */
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#indexPage #mnews a:hover::after {
+    width: 100%;
+    height: 100%;
+    background-color: #1f1f1f;
+    z-index: -1;
+    top: 1px;
+}
+
+#mteam .content_list li {
+    animation-name: fadeInUp;
+}
+
+.newstitem {
+    animation-name: fadeInUp;
+    animation-delay: 0.0s;
+}
+
+#newsitem_1 {
+    animation-name: fadeInRight;
+    animation-delay: 0.1s;
+}
+
+#newsitem_2 {
+    animation-name: fadeInRight;
+    animation-delay: 0.2s;
+}
+
+#newsitem_3 {
+    animation-name: fadeInRight;
+    animation-delay: 0.3s;
+}
+
+#newsitem_4 {
+    animation-name: fadeInRight;
+    animation-delay: 0.4s;
+}
+
+#newsitem_5 {
+    animation-name: fadeInRight;
+    animation-delay: 0.5s;
+}
+
+#mpartner .content_list li {
+    animation-name: fadeInUp;
+    animation-delay: 0.1s;
+}
+
+.slider li div {
+    animation-name: fadeInUp;
+    animation-delay: 0.1s;
+}
+
+#newslist .newsbody {
+    width: 740px;
+}
+
+.postbody img {
+    max-width: 100%;
+    width: auto;
+}
+
+.npagePage #banner div {
+    height: 300px;
+}
+
+.npagePage #banner {
+    height: 300px;
+}
+
+#mpage .content .header p.title {
+    text-align: left;
+    margin-left: 0;
+    font-size: 28px;
+    color: #1a1a1a;
+}
+
+#projectlist .wrapper {
+    width: 85%;
+    margin: 0 auto;
+}
+
+#indexPage #mproject #category {
+    display: block;
+    animation-name: fadeInUp;
+    margin-top: -30px;
+}
+
+#indexPage #mproject #category a {
+    border: none;
+    border-bottom: none;
+    font-size: 15px;
+    text-align: center;
+}
+
+#indexPage #mteam .bx-wrapper .bx-controls-direction a {
+    background-color: transparent;
+    border-radius: 0px;
+    width: 110px;
+    top: 120%;
+}
+
+#indexPage #mteam .bx-wrapper .bx-controls-direction a i {
+    transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+    color: transparent;
+    background: url(http://resources.jsmo.xin/templates/upload/369/icon/jt.png)no-repeat 0px 4px;
+    width: 45px;
+    height: 40px;
+    margin: 0;
+}
+
+#indexPage #mteam .bx-wrapper .bx-controls-direction a:hover i {
+    background: url(http://resources.jsmo.xin/templates/upload/369/icon/jt.png)no-repeat 0px -37px;
+    width: 45px;
+}
+
+#indexPage #mteam .bx-wrapper .bx-controls-direction a.bx-next i {
+    background: url(http://resources.jsmo.xin/templates/upload/369/icon/jt.png)no-repeat -231px 4px;
+    width: 45px;
+    height: 40px;
+    margin: 0;
+    position: absolute;
+    right: 131px;
+    left: -64px;
+}
+
+#indexPage #mteam .bx-wrapper .bx-controls-direction a.bx-next:hover i {
+    background: url(http://resources.jsmo.xin/templates/upload/369/icon/jt.png)no-repeat -231px -37px;
+}
+
+#projectlist .projectitem a::after {
+    content: '';
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    background: url(http://resources.jsmo.xin/templates/upload/307/201606/soso-ico.png);
+    margin: 0 auto;
+    margin-left: -20px;
+    margin-top: 0px;
+    display: inline-block;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    z-index: 10;
+    transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+    opacity: 0;
+}
+
+#projectlist .projectitem:hover a::after {
+    margin-left: -20px;
+    margin-top: -20px;
+    top: 50%;
+    opacity: 0;
+}
+
+#moduleControl a.moduleCItem:hover,
+#moduleControl a.moduleCItem.active title {
+    color: #000;
+    font-size: 12px;
+}
+
+#indexPage #mcontact {
+    background-color: #fff;
+}
+
+#indexPage #mcontact .header p.title {
+    color: #444;
+}
+
+#projectbody .postbody {
+    padding: 1px 50px 50px;
+    background-color: #fff;
+}
+
+#projectimages {
+    padding: 0px 50px 10px;
+    background: #fff;
+}
+
+/*服务*/
+
+/*n首页服务*/
+
+#indexPage #mservice .content .header p.title {
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+#indexPage #mservice .content .header p.subtitle {
+    text-align: center
+}
+
+#indexPage #mservice .content .header p.subtitle::before {
+    content: " ";
+    width: 26%;
+    height: 1px;
+    background-color: rgba(103, 103, 103, 0.15);
+    display: block;
+    position: absolute;
+    top: 60px;
+    left: 20%;
+}
+
+#indexPage #mservice .content .header p.subtitle::after {
+    content: " ";
+    width: 26%;
+    height: 1px;
+    background-color: rgba(103, 103, 103, 0.15);
+    display: block;
+    position: absolute;
+    top: 60px;
+    left: 54%;
+}
+
+#servicelist .serviceitem a img {
+    transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+    width: auto;
+    height: 200px;
+    max-width: 100%;
+}
+
+#indexPage #servicelist #serviceitem_8:hover::before {
+    width: 38px;
+    height: 1px;
+    background-color: #a1a1a1;
+    color: #3d3d3d;
+}
+
+#servicelist .serviceitem:hover .title {
+    color: #3d3d3d;
+}
+
+#mservice .bx-wrapper {
+    height: 350px;
+}
+
+#indexPage #mservice a.more {
+    display: block;
+    width: 600px;
+    height: 46px;
+    line-height: 46px;
+    border: 1px #767676 solid;
+    position: absolute;
+    background-color: #fff;
+    top: 580px;
+    z-index: 10;
+    text-indent: 0px;
+    text-align: center;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#indexPage #mservice a.more::after {
+    content: "";
+    display: block;
+    width: 90%;
+    height: 3px;
+    background-color: #767676;
+    position: absolute;
+    -webkit-margin-before: -1px;
+    transition: all 0.3s ease 0s;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#indexPage #mservice a:hover::after {
+    width: 100%;
+    height: 100%;
+    background-color: #1f1f1f;
+    z-index: -1;
+    top: 1px;
+}
+
+#mservice .content .header p.title {
+    font-family: "HELVETICANEUELTPRO-THEX", "微软雅黑";
+    text-align: left;
+    margin-left: 0%;
+}
+
+#mservice .content .header p.subtitle {
+    text-align: left;
+    margin-left: 0%;
+}
+
+#servicelist .serviceitem div {
+    margin-top: 26px;
+}
+
+#servicelist .serviceitem div p.title {
+    transition: all 0.4s ease 0s;
+    text-align: center;
+    font-size: 22px;
+    color: #fff
+}
+
+#indexPage #mservice .content .header,
+#indexPage #mnews .content .header {
+    width: 100%;
+}
+
+#indexPage #mservice a.more::before {
+    position: absolute;
+    transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+    top: 14px;
+    left: -83px;
+    width: 115px;
+    height: 1px;
+    background: #3d3d3d;
+}
+
+#indexPage #mservice a.more:hover::before {
+    left: 88px;
+    width: 20px;
+    background: #fff;
+}
+
+#servicelist .serviceitem a {
+    text-align: center;
+    width: 100%;
+    margin-top: 0px;
+}
+
+#servicelist .serviceitem {
+    width: 320px;
+    height: 342px;
+    margin-right: 70px;
+}
+
+#sitecontent #servicelist .serviceitem a img {
+    height: auto;
+    float: left;
+    width: 100%;
+}
+
+#sitecontent #servicelist:hover .serviceitem:hover a img {
+    filter: grayscale(0%);
+}
+
+#servicelist .serviceitem div p.description {
+    width: 350px;
+    height: 70px;
+    color: #aaa;
+    text-align: left;
+    margin-top: 6px;
+    transition: all 0.6s ease 0s;
+}
+
+#servicelist .serviceitem div p.description::after {
+    content: "";
+    display: block;
+    width: 0px;
+    height: 1px;
+    background-color: #3d3d3d;
+    position: absolute;
+    margin-top: 0px;
+    margin-top: 16px;
+    opacity: 0;
+    transition: all 0.6s ease 0s;
+}
+
+#servicelist .serviceitem:hover div p.description::after {
+    opacity: 0;
+    width: 260px;
+    background-color: #3d3d3d;
+}
+
+.Pageservice .content #servicelist .serviceitem a.details {
+    display: -moz-box;
+    border-radius: 0px;
+    width: 260px;
+    height: 46px;
+    margin: 0;
+    line-height: 46px;
+    font-size: 16px;
+    color: #3d3d3d;
+    text-indent: 114px;
+    transition: all ease-out .3s;
+    border: 0;
+    opacity: 0;
+}
+
+.Pageservice .content #servicelist .serviceitem:hover a.details {
+    opacity: 0;
+    background-color: #3d3d3d;
+    color: #fff;
+}
+
+.Pageservice .content .header p.subtitle::after {
+    content: "";
+    display: block;
+    width: 0px;
+    height: 340px;
+    background-color: transparent;
+    position: absolute;
+    left: 40%;
+    top: 230px;
+}
+
+#indexPage #mpage .wrapper li {
+    padding-bottom: 140px;
+}
+
+#indexPage .module {
+    z-index: auto
+}
+
+#indexPage .module .content {
+    position: relative;
+    top: 0;
+}
+
+#indexPage #mproject .content {
+    margin: 0;
+}
+
+#indexPage #mservice {
+    padding-top: 100px;
+    height: 900px;
+}
+
+#indexPage #mservice .content {
+    margin: 0;
+    height: auto
+}
+
+#indexPage #mnews {
+    padding-top: 100px;
+    height: 960px;
+}
+
+#indexPage #mpartner {
+    padding-top: 100px;
+}
+
+#indexPage #mpartner .content {
+    margin: 0;
+    height: 150px;
+}
+
+#indexPage #mcontact {
+    padding-top: 100px;
+    height: auto;
+}
+
+#indexPage #mcontact .content {
+    margin: 0;
+}
+
+#indexPage #mservice {
+    padding-top: 100px;
+    height: auto;
+    padding-bottom: 100px;
+}
+
+#indexPage #mteam .content {
+    margin-top: 0;
+}
+
+#sitecontent #mproject.npagePage .content .header p.subtitle::before {
+    content: " ";
+    width: 26%;
+    height: 1px;
+    background-color: rgba(103, 103, 103, 0.15);
+    display: block;
+    position: absolute;
+    top: 130px;
+    left: 20%;
+}
+
+#sitecontent #mproject.npagePage .content .header p.subtitle::after {
+    content: " ";
+    width: 26%;
+    height: 1px;
+    background-color: rgba(103, 103, 103, 0.15);
+    display: block;
+    position: absolute;
+    top: 130px;
+    left: 54%;
+}
+
+#sitecontent .npagePage .content .header.fw p.title {
+    margin-left: 0;
+}
+
+#sitecontent .npagePage .content .header.fw p.subtitle {
+    margin-left: 0;
+}
+
+#sitecontent .npagePage .content .header.fw::before {
+    position: absolute;
+    transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+    content: "";
+    width: 90%;
+    height: 1px;
+    background: #e1e1e1;
+    text-align: left;
+    margin-top: 78px;
+    left: 5%;
+}
+
+#sitecontent .npagePage .content #projectwrap .header::before {
+    position: absolute;
+    transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+    content: "";
+    width: 90%;
+    height: 1px;
+    background: #d8d8d8;
+    text-align: left;
+    margin-left: 5%;
+    margin-top: 70px;
+    display: none;
+}
+
+#projectinfo .header p {
+    margin-left: 0;
+}
+
+#projectinfo .header {
+    margin: 0px 0 20px 0;
+    padding: 0px 0 20px 0;
+}
+
+#sitecontent .npagePage .content .header p.title::before {
+    position: absolute;
+    content: "";
+    top: 86px;
+    width: 1px;
+    height: 50px;
+    background: #c3c3c3;
+    margin-left: 150px;
+    opacity: 0;
+}
+
+#category li.hasmore div {
+    width: 90%;
+    left: 5%;
+}
+
+#category li.hasmore div ul {
+    border-top: rgba(0, 0, 0, 0.08) 1px solid;
+    text-align: left;
+}
+
+#projectinfo .header p.title::before {
+    display: none
+}
+
+/*服务*/
+
+#indexPage #mservice .content .header {
+    margin: 0 auto
+}
+
+#indexPage #mservice .content_list {
+    position: relative;
+}
+
+#indexPage #servicelist {
+    width: 90%;
+    margin: 0 auto
+}
+
+#indexPage #servicelist .serviceitem .service_img {
+    position: relative;
+    z-index: -1;
+}
+
+/* #indexPage #servicelist .serviceitem .service_img::after{content: " ";width: 90%; height: 90%; margin: 0 auto;border:1px red solid;display: block;} */
+
+#indexPage #servicelist .serviceitem {
+    width: 49%;
+    margin-right: 2%;
+    height: 420px;
+    padding: 0;
+    margin-bottom: 50px;
+    position: relative;
+    z-index: 10;
+    overflow: hidden
+}
+
+#indexPage #servicelist .serviceitem:nth-child(2n) {
+    margin-right: 0%;
+}
+
+#indexPage #servicelist .serviceitem div {
+    position: absolute;
+    padding-left: 0px;
+    width: 100%;
+    margin-left: 0px;
+    top: 170px;
+    z-index: 100;
+    transition: all 0.6s ease 0s;
+}
+
+#indexPage #servicelist .serviceitem div p.description {
+    text-align: center;
+    transition: all 0.6s ease 0s;
+    margin-left: 0px;
+    white-space: inherit;
+    margin-left: 0px;
+    padding-left: 30%;
+    width: 40%;
+    font-size: 13px;
+    color: #9d9d9d;
+    margin-top: 0px;
+    opacity: 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+#indexPage #servicelist .serviceitem:hover div p.title {
+    margin-left: 0px;
+    color: #ffffff;
+    margin-top: -30px;
+}
+
+#indexPage #servicelist .serviceitem:hover div p.description {
+    margin-left: 0px;
+    opacity: 1
+}
+
+#indexPage #servicelist .serviceitem a.details {
+    display: block;
+    width: 45px;
+    height: 40px;
+    text-indent: -9999px;
+    background: url(http://resources.jsmo.xin/templates/upload/369/icon/jt.png)no-repeat -232px 4px;
+    border: none;
+    margin: 0px;
+    position: absolute;
+    top: 134px;
+    left: 260px;
+    border-radius: 0;
+    opacity: 0;
+}
+
+#indexPage #servicelist .serviceitem:hover a.details {
+    opacity: 0;
+    left: 260px;
+}
+
+#indexPage #servicelist .serviceitem:hover a.details {
+    background: url(http://resources.jsmo.xin/templates/upload/369/icon/jt.png)no-repeat -232px -46px;
+}
+
+/*分享*/
+
+/* 
+
+.nobanner #header{background-color: #000} */
+
+#shares a#sshare {
+    color: transparent;
+    background-image: url("http://resources.jsmo.xin/templates/upload/220/icon/fenxiang.png");
+    background-repeat: no-repeat;
+}
+
+#shares {
+    height: 35px;
+    right: 66px;
+    bottom: -3px;
+}
+
+#shares a#gotop {
+    margin-top: 6px;
+    background: none;
+    color: #5f5f5f;
+}
+
+#shares a i {
+    border-right: 1px solid rgba(167, 167, 167, 0.18);
+    padding: 0 20px;
+}
+
+#shares a i.fa-share-alt {
+    padding: 0 16px;
+}
+
+#shares a i.fa-weixin {
+    color: transparent;
+    background-image: url(http://resources.jsmo.xin/templates/upload/220/icon/shoujih.png);
+    background-repeat: no-repeat;
+    font-size: 16px;
+    height: 16px;
+    margin: 0 0 0 26px;
+    padding: 0 8px;
+}
+
+#online_open i {
+    margin-top: 5px;
+}
+
+#shares a i.fa-share-alt {
+    padding: 0 16px;
+}
+
+#online_open {
+    margin: 0 10px 0 0;
+    background: none;
+    bottom: 0px;
+    color: #515151;
+}
+
+/*#footer p {
+    position: fixed;
+    bottom: 0;
+    background: #3a3b42;
+    padding: 8px 230px;
+    right: 0px;
+    width: 100%;
+}
+
+#footer.mini p {
+    padding: 8px 230px;
+    right: 0px;
+}*/
+
+#shares a {
+    color: #515151;
+    background-color: transparent;
+    display: inline-flex;
+    height: 22px;
+    width: auto;
+}
+
+#shares a#sweibo {
+    background-color: transparent;
+    transition: all 0.3s ease-out 0s;
+}
+
+#shares a#sweibo:hover {
+    background: transparent;
+}
+
+#shares a#sweixin {
+    background-color: transparent;
+    transition: all 0.3s ease-out 0s;
+}
+
+#shares a#sweixin:hover {
+    background-color: transparent;
+}
+
+#online_lx {
+    border-radius: 0px;
+    bottom: 36px;
+    margin-right: -10px;
+}
+
+#olx_tel div {
+    color: #898989;
+}
+
+#olx_qq li a i {
+    color: #504f4f;
+}
+
+#olx_head i:hover {
+    color: #fff;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    /* IE 9 */
+    -moz-transform: rotate(90deg);
+    /* Firefox */
+    -webkit-transform: rotate(90deg);
+    /* Safari 和 Chrome */
+    -o-transform: rotate(90deg);
+    /* Opera */
+}
+/*
+#footer a path {
+    fill: #808080;
+}
+
+#footer {
+    position: fixed;
+    z-index: 10;
+}
+*/
+#projecttags {
+    margin-top: 20px;
+    width: 340px;
+    float: right;
+    padding: 0px 50px;
+    margin-left: 0px;
+}
+
+#projectib {
+    margin-right: 0px;
+    margin-top: 12px;
+    width: 340px;
+    float: right;
+    padding: 0px 50px;
+    margin-left: 0px;
+}
+
+#projectib .projectitem {
+    width: 160px;
+}
+
+.summary {
+    float: left;
+    animation-name: fadeInUp;
+}
+
+#indexPage #mteam .header img {
+    float: left;
+    margin: 0px auto 24px auto;
+    height: auto;
+    margin: 0px;
+    margin-top: -9px;
+    margin-left: 30px;
+}
+
+.bx-wrapper .bx-prev {
+    left: 0;
+}
+
+#indexPage #mteam .bx-wrapper .bx-pager {
+    opacity: 0;
+}
+
+.bx-wrapper .bx-next {
+    right: 940px;
+}
+
+#newslist .newstitem .newsimg,
+#newslist .newstitem .news_wrapper {
+    top: -46px;
+}
+
+.description {
+    display: 0;
+}
+
+#indexPage #mpage .wrapper {
+    padding-bottom: 120px;
+    margin-left: 140px;
+}
+
+.slider one .title {
+    color: red;
+}
+
+.npagePage #newslist .newsbody .description {
+    margin-top: 30px;
+    color: #9e9e9e;
+    width: 814px;
+    margin-top: 15px;
+    height: 58px;
+    overflow: hidden;
+}
+
+#contactinfo {
+    width: 1120px;
+    padding-left: 0;
+    float: none;
+    margin: 0 auto;
+}
+
+#contactinfo p.add {
+    text-overflow: ellipsis;
+    overflow: inherit;
+    white-space: inherit;
+}
+
+#contactinfo p {
+    float: left;
+    width: 246px;
+    padding-right: 50px;
+    padding-left: 52px;
+    height: auto;
+    border-left: 1px solid #ececec;
+}
+
+#mcontact .content #contactinfo {
+    height: 140px;
+    position: relative;
+    margin-top: 60px;
+    animation-name: slideInUp;
+}
+
+#contactinfo h3 {
+    width: 320px;
+    float: left;
+    overflow: inherit;
+    white-space: inherit;
+}
+
+#mcontact .content #contactform {
+    margin-top: 80px;
+    float: none;
+    height: 100%;
+}
+
+#mcontact .content #contactform {
+    animation-name: slideInUp;
+}
+
+#contactinfo div {
+    position: absolute;
+    top: 30px;
+}
+
+/*首页团队*/
+
+.animated {
+    animation-name: fadeInRight;
+    animation-delay: 0.1s;
+}
+
+#indexPage #mteam .bx-wrapper:after {
+    content: '';
+    width: 100%;
+    display: block;
+    position: absolute;
+    bottom: -20px;
+}
+
+/*案例内页*/
+
+.npagePage content {
+    text-align: center;
+}
+
+.npagePage #category {
+    display: inline-block;
+    position: static;
+    top: 180px;
+    right: 0;
+    padding: 22px 0 80px 0;
+}
+
+.nobanner .npagePage #projectlist .projectitem {
+    height: 580px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.nobanner .npagePage #projectlist .projectitem a .project_info {
+    overflow: hidden;
+    position: absolute;
+}
+
+/*新闻内页*/
+
+.npagePage .content {
+    text-align: center;
+    background: #fff;
+}
+
+#newsPage #newslist .newstitem .newsimg {
+    top: 0px;
+    transition: all 0.6s ease 0s;
+    display: block;
+    width: 320px;
+    height: 160px;
+}
+
+#newsPage #newslist .newsbody {
+    margin-top: 0px;
+    transition: all 0.6s ease 0s;
+}
+
+#newsPage .content #category a {
+    margin-right: 4px;
+}
+
+/*服务内页*/
+
+/*团队*/
+
+#indexPage #mteam .fw {
+    width: 1200px;
+}
+
+.fw p {
+    text-align: left;
+}
+
+#indexPage #mteam .summary {
+    margin-top: 80px;
+    margin-left: 30px;
+}
+
+/*案例--媒体查询*/
+
+#indexPage #mproject {
+    padding-top: 110px;
+    margin-top: 0px;
+}
+
+#indexPage #mpage {
+    padding-top: 110px;
+    padding-bottom: 0px;
+    background-color: #fff;
+    height: 580px;
+    background-size: inherit;
+}
+
+#indexPage #mnews {
+    padding-bottom: 0px;
+    background-color: #fff;
+    background-size: inherit !important;
+    background-attachment: inherit !important;
+    height: 1120px;
+    padding-top: 1px;
+}
+
+#indexPage #mservice {
+    padding-top: 120px;
+    padding-bottom: 0px;
+    height: 750px;
+}
+
+#indexPage #mproject .content #category {
+    padding-bottom: 50px;
+    margin-top: -55px;
+}
+
+#indexPage #mnews.module.bgShow {
+    background-attachment: inherit;
+    background-size: inherit;
+    background-attachment: fixed;
+}
+
+/*n新闻日期*/
+
+#indexPage .newstitem .newsbody .date {
+    top: 90px;
+    display: block;
+    padding: 0;
+    float: none;
+    position: relative;
+}
+
+#projectlist .projectitem a:hover .project_info p.title {
+    margin-top: 10px;
+}
+
+#indexPage #mpage a.more:hover i {
+    color: rgba(255, 255, 255, 0);
+}
+
+#indexPage #mnews a.details:hover i {
+    color: rgba(112, 112, 112, 0);
+}
+
+#projectlist .projectitem a .project_info div {
+    background-color: #fff;
+}
+
+#projectlist .projectitem a img {
+    transform: scale(1, 1);
+    transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+
+#projectlist .projectitem a {
+    transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+
+#projectlist .projectitem a:hover img {
+    transform: scale(1.08, 1.08);
+}
+
+.bx-wrapper .bx-pager.bx-default-pager a::after {
+    content: "";
+    display: block;
+    border: 1px solid rgba(255, 255, 255, 0);
+    width: 2px;
+    height: 2px;
+    background-color: rgb(169, 169, 169);
+    position: relative;
+    left: 3px;
+    top: 3px;
+    transition: all 0.4s ease 0s;
+}
+
+#mslider .bx-wrapper .bx-pager.bx-default-pager a {
+    display: block;
+    border: 1px solid rgba(129, 129, 129, 0.26);
+    background-color: rgba(92, 92, 92, 0);
+}
+
+#indexPage #mslider .bx-wrapper .bx-pager {
+    text-align: center;
+    z-index: 2;
+    bottom: 20px;
+}
+
+#mslider .bx-wrapper .bx-pager.bx-default-pager a {
+    display: block;
+}
+
+.bx-wrapper .bx-pager.bx-default-pager a {
+    margin: 0 12px 20px 0;
+    border: 1px solid rgba(121, 121, 121, 0);
+    background-color: rgba(78, 78, 78, 0);
+    width: 10px;
+    height: 10px;
+    border-radius: 0px;
+}
+
+.bx-wrapper .bx-pager.bx-default-pager a::after {
+    content: "";
+    display: block;
+    border: 1px solid rgba(255, 255, 255, 0);
+    width: 2px;
+    height: 2px;
+    background-color: rgb(169, 169, 169);
+    position: relative;
+    left: 3px;
+    top: 3px;
+    transition: all 0.4s ease 0s;
+}
+
+.npagePage#mproject #projectlist .projectitem a .project_info div {
+    top: 420px;
+    transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+
+.npagePage#mproject #projectlist .projectitem {
+    height: 510px;
+}
+
+.npagePage#mproject #projectlist .projectitem a img {
+    transform: scale(1.0, 1.0);
+    transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+
+.npagePage#mproject #projectlist .projectitem a:hover img {
+    transform: scale(1.08, 1.08);
+}
+
+.npagePage#mproject #projectlist .projectitem:after {
+    display: none
+}
+
+.npagePage#mproject #projectlist .projectitem a:hover .project_info p.title {
+    color: #272727;
+}
+
+/*
+
+#header ul li.navitem a.active::before, #header ul li.navitem:hover a::before {position: absolute;
+
+    content: "";
+
+    height: 1px;
+
+    background: #a8a8a8;
+
+    width: 80%;
+
+    left: 10%;
+
+    margin-top: 10px;
+
+}
+
+
+
+
+
+
+
+#header.mini ul li.navitem a.active::before, #header.mini ul li.navitem:hover a::before { background: rgba(168, 168, 168, 0);}
+
+#header ul li.navitem a::before {
+
+    position: absolute;
+
+    content: "";
+
+    width: 0%;
+
+    height: 1px;
+
+    background: #a8a8a8;
+
+    margin-top: 60px;
+
+    left: 50%;
+
+    transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;margin-top: 50px;
+
+}
+
+
+
+
+
+/* team */
+
+#indexPage #mteam .summary p.subtitle {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+#indexPage #mteam .summary p {
+    width: 620px;
+}
+
+#indexPage #mteam .header a::after {
+    content: "";
+    width: 240px;
+    height: 350px;
+    display: block;
+    border: 0px rgba(33, 33, 33, 0.2) solid;
+    position: absolute;
+    top: 174px;
+    left: 38px;
+    z-index: -1;
+}
+
+/*服务列表*/
+
+.Pageservice #servicelist {
+    width: 1200px;
+}
+
+.Pageservice #servicelist .serviceitem {
+    width: 47%;
+    height: auto;
+    border-bottom: 1px solid rgba(0, 0, 0, .0);
+    margin-bottom: 40px;
+    transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+    margin-right: 0;
+    padding-bottom: 30px;
+    margin-right: 2%;
+}
+
+.Pageservice #servicelist .serviceitem:nth-child(2n) {
+    margin-right: 0%
+}
+
+.Pageservice #servicelist .serviceitem a {
+    height: 380px;
+    top: 0;
+}
+
+.Pageservice #servicelist .serviceitem .service_img {
+    overflow: hidden;
+    display: block;
+}
+
+.Pageservice #servicelist .serviceitem a img {
+    width: 100%;
+    height: auto;
+    transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+
+.Pageservice #servicelist .serviceitem div {
+    width: 100%;
+    background: transparent;
+    padding: 0;
+    margin-top: 0;
+    text-align: left;
+    margin-top: 10px;
+}
+
+.Pageservice #servicelist .serviceitem div p.title {
+    font-size: 17px;
+    height: 30px;
+    line-height: 30px;
+    color: #1a1a1a;
+    text-align: left;
+    width: 360px;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+
+.Pageservice #servicelist .serviceitem div p.description {
+    white-space: normal;
+    color: #888;
+    margin-top: 0;
+    height: 26px;
+    line-height: 26px;
+}
+
+.Pageservice #servicelist .serviceitem:hover {
+    border-bottom: 1px solid #696969;
+}
+
+.Pageservice #servicelist .serviceitem:hover a img {
+    transform: scale(1.12, 1.12);
+}
+
+.Pageservice #servicelist .serviceitem:hover div p.title {
+    padding-top: 30px;
+}
+
+/*团队列表*/
+
+.npagePage #teamlist {
+    width: 1200px;
+}
+
+#teamlist .wrap {
+    margin-right: -70px;
+}
+
+.npagePage #teamlist .teamitem {
+    width: 550px;
+    margin-bottom: 30px;
+    height: 280px;
+}
+
+.npagePage #teamlist .teamitem a {
+    float: left;
+    width: 190px;
+}
+
+.npagePage #teamlist .teamitem img {
+    width: 100%;
+    height: auto;
+}
+
+.npagePage #teamlist .teamitem .wrap {
+    display: none;
+}
+
+.npagePage .teamitem .teaminfo {
+    text-align: left;
+}
+
+.npagePage .teamitem .teaminfo .title {
+    height: 26px;
+    line-height: 26px;
+    display: block;
+    font-size: 18px;
+}
+
+.npagePage .teamitem .teaminfo .subtitle {
+    font-size: 13px;
+    color: #999;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 200px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.npagePage .teamitem .teaminfo .description {
+    line-height: 26px;
+    font-size: 13px;
+    color: #999;
+    height: auto;
+    margin-top: 25px;
+    padding-top: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.npagePage #teamlist .teamitem a .teamimg {
+    width: 160px;
+    height: auto;
+}
+
+.npagePage .teamitem .teaminfo .title a {
+    height: 30px;
+    overflow: hidden
+}
+
+.Pageteam .wrap .teamitem:hover .teaminfo {
+    margin-top: 7px;
+}
+
+.npagePage#mproject #projectlist .projectitem a:hover .project_info div {
+    top: 440px;
+}
+
+/*新闻列表*/
+
+.npagePage#newsPage #newslist .newstitem {
+    height: 237px;
+    margin-bottom: 80px;
+}
+
+.npagePage#newsPage #newslist .newstitem.right .news_wrapper {
+    position: absolute;
+    left: auto;
+    right: 0;
+}
+
+.npagePage#newsPage #newslist .newstitem.right a.newscontent .newsimg {
+    left: 0;
+}
+
+.npagePage#newsPage #newslist .newstitem .newsimg {
+    margin-left: 0;
+    height: 200px;
+}
+
+.Pagenews #newslist .newsbody {
+    width: 630px;
+    padding-left: 50px;
+    padding-top: 40px;
+}
+
+.npagePage#newsPage #newslist .newsbody .date {
+    text-align: left;
+    position: relative;
+    bottom: -152px;
+    margin-bottom: 0;
+    color: #999;
+    font-size: 12px;
+}
+
+.npagePage#newsPage #newslist .newsbody .title {
+    left: 0px;
+    padding: 5px 0 0;
+    height: 30px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 100%;
+    font-size: 16px;
+    color: #323232;
+    line-height: inherit;
+    text-align: left;
+    margin-top: 0;
+    transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+
+.npagePage#newsPage #newslist .newsbody .description {
+    font-size: 13px;
+    color: rgba(122, 122, 122, 0.88);
+    line-height: 26px;
+    text-align: left;
+    margin-top: 6px;
+    height: 30px;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+    width: 780px;
+}
+
+.npagePage#newsPage #newslist .newstitem .news_wrapper::after {
+    content: '';
+    position: absolute;
+    width: 10%;
+    height: 1px;
+    background: rgba(0, 0, 0, .25);
+    left: 53px;
+    bottom: 20px;
+    transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+    opacity: 0;
+}
+
+.npagePage#newsPage #newslist .newstitem .newsbody .title {
+    transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+    position: relative;
+    top: 0px;
+}
+
+.npagePage#newsPage #newslist .newstitem:hover .newsbody .title {
+    top: 12px;
+}
+
+.npagePage#newsPage #newslist .newstitem:hover .newsbody .description {
+    margin-top: 24px;
+}
+
+.npagePage#newsPage #newslist .newstitem:hover .news_wrapper::after {
+    opacity: 1;
+    width: calc( 100% - 53px);
+}
+
+.npagePage#newsPage #newslist .newsbody .date .md {
+    display: none;
+}
+
+.npagePage#newsPage #newslist .newstitem .newsbody .date .year {
+    font-size: 22px;
+}
+
+.npagePage#newsPage #newslist .newstitem .newsbody .date .year {
+    font-size: 18px;
+    top: 15px;
+    opacity: 0;
+    position: relative;
+    transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+
+.npagePage#newsPage #newslist .newstitem:hover .newsbody .date .year {
+    opacity: 1;
+    top: -18px;
+}
+
+#indexPage #servicelist .serviceitem {
+    height: auto;
+}
+
+#sitecontent #servicelist .serviceitem a img {
+    float: none;
+}
+
+.service_img {
+    display: inline-block;
+}
+
+#indexPage #servicelist .serviceitem {
+    outline: 1px solid rgba(255, 255, 255, 0.5);
+    outline-offset: 0px;
+    transition: 0.36s ease;
+}
+
+#indexPage #servicelist .serviceitem:hover {
+    outline-offset: -20px;
+    outline: 1px solid rgba(255, 255, 255, 0.30);
+}
+
+#indexPage #servicelist .serviceitem a {
+    transition: 0.36s ease;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+#indexPage #servicelist .serviceitem:hover a {
+    background-color: rgba(0, 0, 0, 0.6)
+}
+
+#indexPage #projectlist .projectitem:nth-child(1) a .project_info p.description {
+    margin-top: 1%;
+}
+
+.npagePage#newsPage #newslist .newstitem {
+    transition: 0.36s ease;
+    height: 200px;
+}
+
+.npagePage#newsPage #newslist .newstitem:hover {
+    background-color: #f8f8f8;
+}
+
+.Pageservice #servicelist .serviceitem {
+    height: 370px;
+}
+
+#indexPage #mpartner .content .header p.title {
+    display: none
+}
+
+#indexPage #mpartner .content .header p.subtitle {
+    display: none
+}
+
+#indexPage #mcontact .header p.title {
+    color: rgba(68, 68, 68, 0);
+}
+
+#indexPage #mcontact .header p.subtitle {
+    color: rgba(193, 193, 193, 0);
+}
+
+#indexPage #mcontact .content .header {
+    display: none
+}
+
+#indexPage #mcontact .content #contactinfo {
+    float: left;
+    width: 600px;
+}
+
+#indexPage #mcontact #contactinfo div {
+    top: 180px;
+}
+
+#indexPage #mcontact #contactinfo p {
+    padding-left: 0px;
+    border-left: 0px red solid;
+}
+
+#indexPage #mcontact .content #contactform {}
+
+#indexPage #mcontact .content #contactform p {
+    width: 300px;
+}
+
+/* team */
+
+#indexPage #mteam .bx-controls-direction {
+    display: none;
+}
+
+#indexPage #mteam .bx-wrapper .bx-pager {
+    opacity: 1;
+    bottom: 0;
+    left: 450px;
+    bottom: 80px;
+    width: 90px;
+}
+
+#indexPage #mteam .bx-wrapper .bx-pager ::after,
+#indexPage #mteam .bx-wrapper .bx-pager::after {
+    display: none;
+}
+
+#indexPage #mteam .bx-wrapper .bx-pager.bx-default-pager a {
+    background: #000;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+/* #mcontact */
+
+#contactform.fr {
+    background: transparent;
+}
+
+#indexPage #mcontact {
+    background-color: #46474e;
+}
+
+#indexPage #mcontact .content #contactform {
+    border: none;
+}
+
+#mcontact .content #contactform {
+    margin: 0;
+}
+
+#indexPage #mcontact .content .fw:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#indexPage #mcontact .content .fw {
+    width: 1180px;
+}
+
+#mcontact .content #contactinfo {
+    margin: 0;
+}
+
+#indexPage #mcontact .content {
+    height: auto;
+}
+
+#mcontact .content #contactinfo:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#mcontact .content #contactinfo {
+    height: auto;
+}
+
+#contactform {
+    /* display: none; */
+}
+
+#indexPage #mcontact .content #contactinfo {
+    padding-bottom: 170px;
+}
+
+#contactform p {
+    max-width: 100%;
+}
+
+#indexPage #mcontact .content #contactform {
+    border: none;
+    float: right;
+    width: calc(100% - 750px);
+}
+
+#indexPage #mcontact .content #contactform p {
+    width: 100%;
+}
+
+#contactform p .inputsub {
+    margin: 0;
+    argin-top: 30px;
+    margin-bottom: 30px;
+    float: left;
+}
+
+#banner div {
+    animation: none;
+}
+
+#indexPage #mteam .bx-wrapper .bx-pager.bx-default-pager a {
+    border: 1px solid rgba(129, 129, 129, 0.26);
+    background-color: rgba(92, 92, 92, 0);
+}
+
+#indexPage #mteam .bx-wrapper .bx-pager.bx-default-pager a::after {
+    content: "";
+    display: block;
+    border: 1px solid rgba(255, 255, 255, 0);
+    width: 2px;
+    height: 2px;
+    background-color: rgb(169, 169, 169);
+    position: relative;
+    left: 3px;
+    top: -17px;
+    transition: all 0.4s ease 0s;
+}
+
+#indexPage #mteam .bx-wrapper .bx-pager.bx-default-pager a:hover {
+    border: 1px rgba(51, 51, 51, 0.76) solid;
+}
+
+#indexPage #mteam .bx-wrapper .bx-pager.bx-default-pager a:hover::after {
+    background-color: rgba(51, 51, 51, 0.7);
+}
+
+#indexPage #mteam .bx-wrapper .bx-pager-item {
+    margin-right: 8px;
+}
+
+#indexPage #mcontact #contactinfo h3 {
+    color: rgba(255, 255, 255, 0.68);
+}
+
+#contactinfo div a {
+    background: #56575f;
+    color: rgba(255, 255, 255, 0.92);
+}
+
+.service_img {
+    display: block;
+}
+
+#indexPage #mnews a:hover::after {
+    top: 0px;
+    margin: 0;
+}
+
+#indexPage #mcontact .content #contactform p:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#contactform p textarea.inputtxt {
+    border: none;
+    margin-bottom: 5px;
+    background: none;
+    color: #D6D6D6;
+    float: left;
+    border-bottom: 1px solid rgba(231, 228, 228, 0.22);
+    margin: 0;
+    width: 100%;
+}
+
+#contactform p .inputtxt {
+    margin: 0;
+    width: 100%;
+}
+
+#projectib .projectitem:nth-child(1) {
+    width: 330px;
+}
+
+.npagePage .content {
+    margin-bottom: 100px;
+}
+
+@media screen and (max-width: 1280px) {
+    #indexPage #mservice a.more {
+        top: 530px;
+    }
+}
+
+.npagePage#mproject #projectlist .projectitem a .project_info div {
+    top: 82%;
+}
+
+/* #online_lx {
+
+    right: -200px;
+
+} */
+
+/* right: -200px; */
+
+#indexPage #mcontact .content {
+    overflow: hidden;
+}
+
+/* #indexPage #mnews .content {
+
+
+
+} */
+
+#indexPage #mnews .content {
+    height: auto;
+}
+
+#indexPage #mnews.module.bgShow {
+    height: auto;
+    padding-top: 136px;
+}
+
+#indexPage #mnews .content .header {
+    margin-bottom: 450px;
+}
+
+#indexPage #mnews.module.bgShow {
+    background-position: top;
+}
+
+#indexPage #mnews .content_list {
+    padding: 30px 0;
+}
+
+#indexPage #mservice {
+    height: auto;
+}
+
+#indexPage #mservice a.more {
+    position: relative;
+    top: 0;
+}
+
+#indexPage #mservice a.more {
+    margin: 3% auto 0;
+}
+
+#indexPage #mservice .content {
+    padding-bottom: 3%;
+}
+
+@keyframes showHide {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#online_lx {
+    opacity: 0;
+    animation: showHide 0.1s linear 1s forwards;
+}
+
+/* ff */
+
+.npagePage#mproject #projectlist .projectitem {
+    height: auto;
+}
+
+.npagePage#mproject #projectlist .projectitem a .project_info div {
+    position: absolute;
+    top: auto;
+    bottom: 0;
+}
+
+/* #projectlist .projectitem a .project_info {
+
+    position: absolute;
+
+    bottom: 0;
+
+} */
+
+.npagePage#mproject #projectlist .projectitem a:hover .project_info div {
+    top: auto;
+    padding-bottom: 0;
+}
+
+.npagePage#mproject #projectlist .projectitem a {
+    padding-bottom: 40px;
+}
+
+#projectlist .projectitem a .project_info p.subtitle,
+.nobanner #projectlist .projectitem a .project_info p.subtitle {
+    height: auto;
+}
+
+#projectlist .projectitem a .project_info p.subtitle:after,
+.nobanner #projectlist .projectitem a .project_info p.subtitle:after {
+    display: none;
+}
+
+#projectlist .projectitem a .project_info div {
+    height: 80px;
+    padding-bottom: 20px;
+}
+
+#indexPage #mnews .content .header {
+    margin-bottom: 430px;
+}
+
+/* #indexPage #newslist .newstitem .newsimg, #newslist .newstitem .news_wrapper{top: -64px;} */
+
+#indexPage #newslist .newstitem {
+    margin-bottom: 20px;
+}
+
+#indexPage #mnews #newslist .newstitem .newsbody .title {
+    width: 240px;
+}
+
+#indexPage .mvideom.mvideom01 .mvideo_header p.mvideo_title {
+    margin-left: 0%;
+    margin-bottom: 12px;
+    text-align: center;
+    margin-top: -70px;
+}
+
+#indexPage .mvideom.mvideom01 .mvideo_header p.mvideo_subtitle {
+    font-size: 15px;
+    margin-top: 5px;
+    color: rgb(165, 165, 165);
+    text-align: center;
+    margin-left: 0%;
+}
+
+#indexPage .mvideom.mvideom01 .mvideo_header p.mvideo_title::before {
+    content: " ";
+    width: 26%;
+    height: 1px;
+    background-color: rgba(103, 103, 103, 0.15);
+    display: block;
+    position: absolute;
+    top: 60px;
+    left: 20%;
+}
+
+#indexPage .mvideom.mvideom01 .mvideo_header p.mvideo_subtitle::after {
+    content: " ";
+    width: 26%;
+    height: 1px;
+    background-color: rgba(103, 103, 103, 0.15);
+    display: block;
+    position: absolute;
+    top: 60px;
+    left: 54%;
+}
+
+.bx-wrapper .bx-pager.bx-default-pager a:hover,
+.bx-wrapper .bx-pager.bx-default-pager a.active,
+.bx-wrapper .bx-pager.bx-default-pager a:focus {
+    border: 1px solid rgb(160, 160, 160);
+    background-color: rgba(61, 61, 61, 0);
+}
+
+.mvideom .layoutslider .module-content {
+    margin-top: 30px;
+}
+
+#indexPage .module.mvideom.mm122254 {
+    padding-top: 60px;
+}
+
+#indexPage .mvideom a.mvideo_more {
+    display: block;
+    width: 600px;
+    height: 46px;
+    line-height: 46px;
+    border: 1px #767676 solid;
+    position: relative;
+    /* top: 670px; */
+    background-color: #fff;
+    z-index: 10;
+    left: 0;
+    right: 0;
+    color: #2d2d2d;
+    font-size: 14px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#indexPage .mvideom a.mvideo_more::after {
+    content: "";
+    display: block;
+    width: 90%;
+    height: 3px;
+    background-color: #767676;
+    /* margin-left: 5%; */
+    position: absolute;
+    -webkit-margin-before: -1px;
+    transition: all 0.3s ease 0s;
+    /* margin-top: -48px; */
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#indexPage .mvideom a.mvideo_more:hover::after {
+    width: 100%;
+    height: 100%;
+    background-color: #1f1f1f;
+    z-index: -1;
+    top: 1px;
+}
+
+#indexPage .mvideom a.mvideo_more:hover {
+    color: #fff
+}
+
+#indexPage #mservice {
+    padding-top: 90px;
+    padding-bottom: 5%;
+}
+
+#indexPage .newstitem .newsbody .date {
+    top: 60px;
+}
+
+#indexPage #mnews #newslist .newstitem .newsbody .title {
+    margin-top: 92px;
+}
+
+#indexPage .newstitem .newsbody::after {
+    top: 275px;
+}
+
+#indexPage .newstitem a.details {
+    margin-top: -96px;
+}
+
+#indexPage #mcontact .content .fw {
+    margin-bottom: 80px;
+}
+
+#contactform p .inputsub {
+    margin-top: 14px;
+}
+
+#indexPage #mslider .bx-wrapper .bx-pager {
+    z-index: 0;
+}
+
+#indexPage #servicelist .serviceitem {
+    outline: none;
+}
+#indexPage #servicelist .serviceitem:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    transition: 0.36s ease;
+    border: 1px solid rgba(255, 255, 255, 0.30);
+}
+
+#indexPage #servicelist .serviceitem:hover:after {
+    top: 20px;
+    left: 20px;
+    bottom: 20px;
+    right: 20px;
+}
+#indexPage #newslist .newstitem .newsimg {
+    outline: none;
+}
+
+
+#indexPage #newslist .newstitem .newsimg:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    transition: 0.36s ease;
+    border: 1px solid rgba(255, 255, 255, 0.30);
+}
+
+
+#indexPage #newslist .newstitem:hover .newsimg:after {
+    top: 10px;
+    left: 10px;
+    bottom: 10px;
+    right: 10px;
+}
+
+
+
+#indexPage #mservice a:hover::after {
+    top: 0;
+
+}

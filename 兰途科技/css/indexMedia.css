@@ -1,0 +1,101 @@
+/*1200 ~ 1500*/
+	@media all and (min-width: 1200px) and (max-width: 1500px){
+		#banner{height: 500px;}
+		#banner .b-part .part1 .img1{top: 308px; left: 55px;}
+		#banner .b-part .part1 .img2{width: 640px; height: 440px;}
+		
+		#banner .b-part .part2 .img1{top: 300px; left: 50;}
+		#banner .b-part .part2 .img2{width: 635px; height: 444px; bottom: 20px; right: 100px;}
+		
+		#banner .b-part .part3 .img1{top: 0;left: 45px; width: 640px;height: 490px;}
+		#banner .b-part .part3 .img2{top: 100px; right: 100px;}
+		
+		#classic{height: 790px;}
+		#classic .c-main{width: 90%;margin-top: 0;}
+		#classic .c-main ul li{width: 192px; height: 317px;}
+		#classic .c-main ul li.slide{width: 240px; height: 396px;}
+		#classic .c-main ul li.mid{width: 288px; height: 475px;}
+		
+	}
+	
+/*900 ~ 1200*/
+	@media all and (min-width: 900px) and (max-width: 1200px){
+	/*banner*/
+		#banner{height: 450px;}
+		#banner .b-part .part1 .img1{top: 288px; left: 55px;}
+		#banner .b-part .part1 .img2{width: 500px; height: 385px; right: 40px;}	
+		
+		#banner .b-part .part2 .img1{top: 200px;}
+		#banner .b-part .part2 .img2{width: 544px; height: 384px; bottom: 50px; right: 50px;}
+		
+		#banner .b-part .part3 .img1{top: 20px;left: 30px; width: 500px;height: 390px;}
+		#banner .b-part .part3 .img2{top: 100px; right: 50px; width: 260px; height: 100px;}
+	/*classic*/		
+		#classic{height: 740px;}
+		#classic .c-main{width: 80%;margin-top: 0;}
+		#classic .c-main ul li{width: 144px; height: 236px;}
+		#classic .c-main ul li.slide{width: 180px; height: 295px;}
+		#classic .c-main ul li.mid{width: 216px; height: 354px;}
+	}
+/*0~900*/
+	@media (max-width: 900px) {
+	/*banner*/
+		#banner{height: 350px; margin-top: 106px;}
+		#banner .b-part .part1 .img1{left: 50%; bottom: 0; width: 200px; height: 80px; margin-left: -100px;}
+		#banner .b-part .part1 .img2{left: 50%; top: 8px; width: 330px; height: 240px; margin-left: -165px;}	
+	/*partner*/
+		#partner .p-list ul{/* width: 250px; */}
+		#partner .p-list ul li{float: none;margin: 35px auto;}
+	/*copy*/
+		#copy{line-height: 40px;}
+		#copy span{display: block;}
+	}
+/*600~900*/	
+	@media only screen and (min-width: 600px) and (max-width: 900px){
+	/*banner*/
+		#banner{height: 350px; margin-top: 106px;}
+		
+		#banner .b-part .part2 .img1{top: 200px; left: 30px; width: 185px; height: 90px; }
+		#banner .b-part .part2 .img1 p{margin: 6px 0;}
+		#banner .b-part .part2 .img2{width: 370px; height: 270px; bottom: 36px; right: 10px;}
+
+		#banner .b-part .part3 .img1{top: 50px;left: 20px; width: 350px;height: 270px;}
+		#banner .b-part .part3 .img2{top: 100px; right: 50px; width: 200px; height: 100px;}
+
+	/*classic*/	
+		#classic{height: 690px;}
+		#classic .c-main{width: 70%;height: 354px;margin-top: 100px;}
+		#classic .c-main ul li{width: 144px; height: 236px;}
+		#classic .c-main ul li.slide{width: 180px; height: 295px;}
+		#classic .c-main ul li.mid{width: 216px; height: 354px;}
+	} 
+	/*partner*/
+
+/*0~600*/
+	@media only screen and (max-width: 600px){
+	/*banner*/
+		#banner{height: 400px; margin-top: 106px;}
+		#banner .b-part .part1 .img1{bottom: 15px;}
+		#banner .b-part .part1 .img2{top: 23px;}	
+
+		#banner .b-part .part2 .img1{top: 250px;left: 50%; width: 200px;height: 96px;margin-left: -100px;}
+		#banner .b-part .part2 .img1 p{margin: 6px 0;}
+		#banner .b-part .part2 .img2{width: 300px; height: 207px; bottom: 172px; right: 50%; margin-right: -150px;}
+
+		#banner .b-part .part3 .img1{top: 0; left: 50%; margin-left: -150px; width: 300px;height: 233px;}
+		#banner .b-part .part3 .img2{top: 250px; right: 50%; width: 200px; height: 100px; margin-right: -100px;}
+	/*classic*/	
+		#classic{height: 690px;}
+		#classic .c-main{width: 198px; height: 327px; margin-top: 100px;}
+		#classic .c-main ul li{width: 144px; height: 236px;}
+		#classic .c-main ul li.slide{width: 180px; height: 295px;}
+		#classic .c-main ul li.mid{width: 198px; height: 327px;}
+	/*partner*/
+		#partner .p-title{background-size: contain;}
+		#partner .p-list ul .li1{width: 36.3%;}
+		#partner .p-list ul .li2{width: 20%;}
+		#partner .p-list ul .li3{width: 35.5%;}
+	/*copy*/
+		#copy{font-size: 12px;}
+	}
+	

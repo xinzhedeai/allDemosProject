@@ -22,6 +22,7 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
+  @import url("./common/stylus/mixin.styl");
   #app
     .tab
       display: flex

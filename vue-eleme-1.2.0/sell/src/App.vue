@@ -44,7 +44,12 @@ export default {
 
 <style scoped lang="stylus" rel="stylesheet/stylus">
   // @import url("./common/stylus/mixin.styl");
-  @import url('./common/stylus/mixin.styl');
+  // @import './common/stylus/mixin.styl';
+    @import './common/stylus/index.styl';
+  // @import './common/stylus/base.styl';
+  // @import './common/stylus/icon.styl';        
+  // @import './common/stylus/mixin.styl';
+      
   
   .tab
     display: flex
@@ -52,12 +57,12 @@ export default {
     height: 40px
     line-height: 40px
     border-bottom 1px solid rgba(7, 17, 27, .1)
-    &:after
-      display block
-      position absolute
-      content: '';
-      border: 1px solid #000;
-    // border-1px(rgba(7, 17, 27, .1))
+    // &:after
+    //   display block
+    //   position absolute
+    //   content: '';
+    //   border: 1px solid #000;
+    border-1px(rgba(7, 17, 27, .1));
     .tab-item
       flex: 1
       text-align: center

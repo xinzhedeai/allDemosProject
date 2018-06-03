@@ -18,30 +18,68 @@
         </div>
       
       </div>
-      <div v-if="seller.supports" class="support-count">
+      <div v-if="seller.supports" class="support-count" @click="showDetail">
         <span class="count">{{seller.supports.length}}个</span>
         <i class="icon-keyboard_arrow_right"></i>
       </div>
     </div>
-    <div v-if="seller.supports" class="bulletin-wrapper">
+    <div v-if="seller.supports" class="bulletin-wrapper" @click="showDetail">
       <span class="bulletin-title"></span><span class="bulletin-text">{{seller.bulletin}}</span>
       <i class="icon-keyboard_arrow_right"></i>
     </div>
     <div class="background">
       <img :src="seller.avatar" width="100%" height="100%" alt="">
     </div>
+    <div v-show="detailShow" class="detail">
+      <div class="detail-wrapper clearfix">
+        <div class="detail-main">
+          <h1 class="name">{{seller.name}}</h1>
+          <div class="star-wrapper">
+           <star :size="48" :score="seller.score"></star>
+          </div>
+          <div class="title">
+            <div class="line">优惠</div>
+            <div class="text"></div>
+            <div class="line"></div>
+          </div>
+          <ul v-if="seller.supports" class="supports">
+            <li class="support-item" v-for="item in seller.supports">
+              <span class="icon" :class="classMap[seller.supports[$index].type]"></span>
+              <span class="text">{{seller.supports[$index].description}}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="detail-close">
+        <i class="icon-close"></i>
+      </div>
+    </div>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
+import star from 'components/star/star';
 export default {
   props: {
     seller: {
       type: Object
     }
   },
+  data() {
+    return {
+      detailShow: false
+    };
+  },
+  methods: {
+    showDetail() {
+      this.detailShow = true;
+    }
+  },
   created() {
     this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee'];
+  },
+  components: {
+    star
   }
 
 };
@@ -53,8 +91,10 @@ export default {
 @import '../../common/stylus/mixin';
   .header
     position relative
-    color: #fff
-    background #999
+    overflow hidden
+    background rgba(7, 17, 27, .5)
+    color #fff
+    // background #999
     .content-wrapper
       position relative
       padding 24px 12px 18px 24px
@@ -149,9 +189,9 @@ export default {
         font-size 10px 
       .icon-keyboard_arrow_right
         position absolute
-        font-size 10px
         top 8px
         right 12px
+        font-size 10px
     .background
       position absolute
       top 0
@@ -159,10 +199,84 @@ export default {
       width 100%
       height 100%
       z-index -1
-      filter bl ur(10px)
+      filter blur(10px)
+    .detail
+      position fixed
+      top 0
+      left 0
+      z-index 100
+      width 100%
+      height 100%
+      overflow auto 
+      background rgba(7, 17, 27, .8)
+      .detail-wrapper
+        width 100%
+        min-height: 100%
+        .detail-main
+          margin-top: 64px
+          padding-bottom 64px
+          .name
+            line-height 16px
+            text-align center
+            font-size 16px
+            font-weight 700
+          .star-wrapper
+            margin-top 18px
+            padding 2px 0
+            text-align center
+          .title
+            display flex
+            width 80%
+            margin: 28px auto 24px auto 
+            .line 
+              flex 1
+              position relative
+              top -6px
+              border-bottom 1px solid rgba(255, 255, 255, .2);
+            .text
+              padding 0 12px;
+              font-weight 700
+              font-size 14px
+          .supports
+            width 80%
+            margin: 0 auto;
+            .support-item
+              padding: 0 12px;
+              margin-bottom 12px
+              font-size 0
+              &:last-child
+                margin-bottom 0
+              .icon
+                display inline-block
+                width 16px
+                height 16px
+                vertical-align top
+                margin-right 6px
+                background-size 16px 16px;
+                background-repeat no-repeat
+                &.decrease
+                  bg-image('decrease_2')
+                &.discount
+                  bg-image('discount_2')
+                &.guarantee
+                  bg-image('guarantee_2')
+                &.invoice
+                  bg-image('invoice_2')
+                &.special
+                  bg-image('special_2')
+              .text
+                line-height 12px
+                font-size 12px
 
 
 
+      .detail-close
+        position relative
+        width 32px
+        height 32px
+        margin -64px auto 0 auto ;
+        clear both
+        font-size 32px
 
 
 

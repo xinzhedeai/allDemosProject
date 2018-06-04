@@ -30,7 +30,7 @@
     <div class="background">
       <img :src="seller.avatar" width="100%" height="100%" alt="">
     </div>
-    <div v-show="detailShow" class="detail">
+    <div v-show="detailShow" class="detail" transition="fade">
       <div class="detail-wrapper clearfix">
         <div class="detail-main">
           <h1 class="name">{{seller.name}}</h1>
@@ -38,8 +38,8 @@
            <star :size="48" :score="seller.score"></star>
           </div>
           <div class="title">
-            <div class="line">优惠</div>
-            <div class="text"></div>
+            <div class="line"></div>
+            <div class="text">优惠信息</div>
             <div class="line"></div>
           </div>
           <ul v-if="seller.supports" class="supports">
@@ -48,9 +48,17 @@
               <span class="text">{{seller.supports[$index].description}}</span>
             </li>
           </ul>
+          <div class="title">
+            <div class="line"></div>
+            <div class="text">商家公告</div>
+            <div class="line"></div>
+          </div>
+          <div class="bulletin">
+            <div class="content">{{seller.bulletin}}</div>
+          </div>
         </div>
       </div>
-      <div class="detail-close">
+      <div class="detail-close" @click="hideDetail">
         <i class="icon-close"></i>
       </div>
     </div>
@@ -73,6 +81,9 @@ export default {
   methods: {
     showDetail() {
       this.detailShow = true;
+    },
+    hideDetail() {
+      this.detailShow = false;
     }
   },
   created() {
@@ -208,7 +219,15 @@ export default {
       width 100%
       height 100%
       overflow auto 
-      background rgba(7, 17, 27, .8)
+      transition all .5s ;
+      backgrop-filter: blur(10px);
+      // background rgba(7, 17, 27, .8);
+      &.fade-transition
+        opacity 1
+        background rgba(7, 17, 27, .8);
+      &.fade-enter, &.fade-leave
+        opacity 0
+        background rgba(7, 17, 27, 0);
       .detail-wrapper
         width 100%
         min-height: 100%
@@ -265,8 +284,15 @@ export default {
                 &.special
                   bg-image('special_2')
               .text
-                line-height 12px
+                line-height 16px
                 font-size 12px
+          .bulletin
+            width 89%
+            margin 0 auto 
+            .center
+              padding 0 12px;
+              line-height 24px
+              font-size 12px
 
 
 

@@ -2,7 +2,7 @@
   <div class="goods">
     <div class="menu-wrapper" v-el:menu-wrapper>
       <ul>
-        <li v-for="item in goods" class="menu-item" :class="{'current': currentIndex === $index}">
+        <li v-for="item in goods" class="menu-item" :class="{'current': currentIndex === $index}" @click="selectMenu($index, $event)">
           <span class="text border-1px">
             <span v-show="item.type>0" class="icon" :class="classMap[item.type]"></span>
             {{item.name}}
@@ -54,7 +54,9 @@ export default {
       for (let i = 0; i < this.listHeight.length; i++) {
         let height1 = this.listHeight[i];
         let height2 = this.listHeight[i + 1];
-        if (!height2 || (this.scrollY > height1 && this.scrollY < height2)) {
+        // 之所以要判断个!height2，是因为更好的获取最后一个菜单项的索引
+        if (!height2 || (this.scrollY >= height1 && this.scrollY < height2)) {
+          console.info('***dangqian菜单索引值***' + i);
           return i;
         }
       }
@@ -63,23 +65,39 @@ export default {
   },
   methods: {
     _initScroll() {
-      this.menuScroll = new BScroll(this.$els.menuWrapper, {});
+      this.menuScroll = new BScroll(this.$els.menuWrapper, {
+        /**
+         * 之所以要添加这个属性，
+         * 原因是BScroll默认值开启了mousestart等事件，
+         * 关闭了click等默认事件，所以click不生效。
+         **/
+        click: true
+      });
       this.foodsScroll = new BScroll(this.$els.foodsWrapper, {
         probeType: 3
       });
       this.foodsScroll.on('scroll', (pos) => {
         this.scrollY = Math.abs(Math.round(pos.y));
+        console.info(this.scrollY);
       });
     },
     _calculateHeight() {
       let foodList = this.$els.foodsWrapper.getElementsByClassName('food-list-hook');
-      let height = 0;
+      let height = 0; // 这里设了一个伏笔，倒推index值。
       this.listHeight.push(height);
       for (let i = 0; i < foodList.length; i++) {
         let item = foodList[i];
         height += item.clientHeight;
+        // console.info('元素' + height);
         this.listHeight.push(height);
       }
+      console.info(this.listHeight);
+    },
+    selectMenu(index, event) {
+      if (!event._constructed) {
+        // return;
+      }
+      console.log(index);
     }
   },
   data() {
@@ -125,6 +143,14 @@ export default {
         height 54px
         padding: 0 12px
         line-height 14px
+        &.current
+          position relative
+          z-index 10
+          margin-top -1px
+          background-color #fff
+          font-weight 700
+          .text
+            border-none()
         .text
           display table-cell
           width 56px

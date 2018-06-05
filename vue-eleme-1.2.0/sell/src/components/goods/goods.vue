@@ -37,11 +37,13 @@
         </li>
       </ul>
     </div>
+    <shopcart></shopcart>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
 import BScroll from 'better-scroll';
+import shopcart from 'components/shopcart/shopcart';
 const ERR_OK = 0;
 export default {
   props: {
@@ -62,6 +64,9 @@ export default {
       }
       return 0;
     }
+  },
+  components: {
+    shopcart
   },
   methods: {
     _initScroll() {
@@ -94,9 +99,16 @@ export default {
       console.info(this.listHeight);
     },
     selectMenu(index, event) {
+      /**
+        只有vue自发的点击事件event中才有_constructed属性
+        如果是原声js触发的点击时间，那么不向下执行
+       */
       if (!event._constructed) {
-        // return;
+        return;
       }
+      let foodList = this.$els.foodsWrapper.getElementsByClassName('food-list-hook');
+      let el = foodList[index];
+      this.foodsScroll.scrollToElement(el, 300);
       console.log(index);
     }
   },
@@ -113,7 +125,7 @@ export default {
       reponse = reponse.body;
       if (reponse.errno === ERR_OK) {
         this.goods = reponse.data;
-        this.$nextTick(() => {
+        this.$nextTick(() => { // 确保dom已经渲染完毕才能执行回调函数
           this._initScroll();
           this._calculateHeight();
         });

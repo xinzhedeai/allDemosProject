@@ -54,7 +54,7 @@ export default {
       for (let i = 0; i < this.listHeight.length; i++) {
         let height1 = this.listHeight[i];
         let height2 = this.listHeight[i + 1];
-        if(this.scrollY > height1 && this.scrollY < height2) {
+        if (!height2 || (this.scrollY > height1 && this.scrollY < height2)) {
           return i;
         }
       }
@@ -72,11 +72,10 @@ export default {
       });
     },
     _calculateHeight() {
-      
       let foodList = this.$els.foodsWrapper.getElementsByClassName('food-list-hook');
       let height = 0;
       this.listHeight.push(height);
-      for(let i = 0; i < foodList.length; i++) {
+      for (let i = 0; i < foodList.length; i++) {
         let item = foodList[i];
         height += item.clientHeight;
         this.listHeight.push(height);

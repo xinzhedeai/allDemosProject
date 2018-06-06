@@ -30,6 +30,9 @@
                   <span class="now">￥{{food.price}}</span>
                   <span class="old" v-show="food.oldPrice">￥{{food.oldPrice}}</span>
                 </div>
+                <div class="cartcontrol-wrapper">
+                  <cartcontrol :food=food></cartcontrol>
+                </div>
               </div>
               
             </li>
@@ -37,102 +40,105 @@
         </li>
       </ul>
     </div>
-    <shopcart></shopcart>
+    <shopcart :delivery-price="seller.deliveryPrice" :min-price="seller.minPrice"></shopcart>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
-import BScroll from 'better-scroll';
-import shopcart from 'components/shopcart/shopcart';
-const ERR_OK = 0;
-export default {
-  props: {
-    seller: {
-      type: Object
-    }
-  },
-  computed: {
-    currentIndex() {
-      for (let i = 0; i < this.listHeight.length; i++) {
-        let height1 = this.listHeight[i];
-        let height2 = this.listHeight[i + 1];
-        // 之所以要判断个!height2，是因为更好的获取最后一个菜单项的索引
-        if (!height2 || (this.scrollY >= height1 && this.scrollY < height2)) {
-          console.info('***dangqian菜单索引值***' + i);
-          return i;
+  import BScroll from 'better-scroll';
+  import shopcart from 'components/shopcart/shopcart';
+  import cartcontrol from 'components/cartcontrol/cartcontrol';
+  const ERR_OK = 0;
+  export default {
+    props: {
+      seller: {
+        type: Object
+      }
+    },
+    computed: {
+      currentIndex() {
+        for (let i = 0; i < this.listHeight.length; i++) {
+          let height1 = this.listHeight[i];
+          let height2 = this.listHeight[i + 1];
+          // 之所以要判断个!height2，是因为更好的获取最后一个菜单项的索引
+          if (!height2 || (this.scrollY >= height1 && this.scrollY < height2)) {
+            console.info('***dangqian菜单索引值***' + i);
+            return i;
+          }
         }
+        return 0;
       }
-      return 0;
-    }
-  },
-  components: {
-    shopcart
-  },
-  methods: {
-    _initScroll() {
-      this.menuScroll = new BScroll(this.$els.menuWrapper, {
-        /**
-         * 之所以要添加这个属性，
-         * 原因是BScroll默认值开启了mousestart等事件，
-         * 关闭了click等默认事件，所以click不生效。
-         **/
-        click: true
-      });
-      this.foodsScroll = new BScroll(this.$els.foodsWrapper, {
-        probeType: 3
-      });
-      this.foodsScroll.on('scroll', (pos) => {
-        this.scrollY = Math.abs(Math.round(pos.y));
-        console.info(this.scrollY);
-      });
     },
-    _calculateHeight() {
-      let foodList = this.$els.foodsWrapper.getElementsByClassName('food-list-hook');
-      let height = 0; // 这里设了一个伏笔，倒推index值。
-      this.listHeight.push(height);
-      for (let i = 0; i < foodList.length; i++) {
-        let item = foodList[i];
-        height += item.clientHeight;
-        // console.info('元素' + height);
-        this.listHeight.push(height);
-      }
-      console.info(this.listHeight);
+    components: {
+      shopcart,
+      cartcontrol
     },
-    selectMenu(index, event) {
-      /**
-        只有vue自发的点击事件event中才有_constructed属性
-        如果是原声js触发的点击时间，那么不向下执行
-       */
-      if (!event._constructed) {
-        return;
-      }
-      let foodList = this.$els.foodsWrapper.getElementsByClassName('food-list-hook');
-      let el = foodList[index];
-      this.foodsScroll.scrollToElement(el, 300);
-      console.log(index);
-    }
-  },
-  data() {
-    return {
-      goods: [],
-      listHeight: [],
-      scrollY: 0
-    };
-  },
-  created() {
-    this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee'];
-    this.$http.get('/api/goods').then((reponse) => {
-      reponse = reponse.body;
-      if (reponse.errno === ERR_OK) {
-        this.goods = reponse.data;
-        this.$nextTick(() => { // 确保dom已经渲染完毕才能执行回调函数
-          this._initScroll();
-          this._calculateHeight();
+    methods: {
+      _initScroll() {
+        this.menuScroll = new BScroll(this.$els.menuWrapper, {
+          /**
+          * 之所以要添加这个属性，
+          * 原因是BScroll默认值开启了mousestart等事件，
+          * 关闭了click等默认事件，所以click不生效。
+          **/
+          click: true
         });
+        this.foodsScroll = new BScroll(this.$els.foodsWrapper, {
+          probeType: 3,
+          click: true
+        });
+        this.foodsScroll.on('scroll', (pos) => {
+          this.scrollY = Math.abs(Math.round(pos.y));
+          console.info(this.scrollY);
+        });
+      },
+      _calculateHeight() {
+        let foodList = this.$els.foodsWrapper.getElementsByClassName('food-list-hook');
+        let height = 0; // 这里设了一个伏笔，倒推index值。
+        this.listHeight.push(height);
+        for (let i = 0; i < foodList.length; i++) {
+          let item = foodList[i];
+          height += item.clientHeight;
+          // console.info('元素' + height);
+          this.listHeight.push(height);
+        }
+        console.info(this.listHeight);
+      },
+      selectMenu(index, event) {
+        /**
+          只有vue自发的点击事件event中才有_constructed属性
+          如果是原声js触发的点击时间，那么不向下执行
+        */
+        if (!event._constructed) {
+          return;
+        }
+        let foodList = this.$els.foodsWrapper.getElementsByClassName('food-list-hook');
+        let el = foodList[index];
+        this.foodsScroll.scrollToElement(el, 300);
+        console.log(index);
       }
-    });
-  }
-};
+    },
+    data() {
+      return {
+        goods: [],
+        listHeight: [],
+        scrollY: 0
+      };
+    },
+    created() {
+      this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee'];
+      this.$http.get('/api/goods').then((reponse) => {
+        reponse = reponse.body;
+        if (reponse.errno === ERR_OK) {
+          this.goods = reponse.data;
+          this.$nextTick(() => { // 确保dom已经渲染完毕才能执行回调函数
+            this._initScroll();
+            this._calculateHeight();
+          });
+        }
+      });
+    }
+  };
 </script>
 
 <style scoped lang="stylus" rel="stylesheet/stylus">
@@ -239,7 +245,10 @@ export default {
               text-decoration line-through
               font-size 10px
               color rgb(147, 153, 159)
-              
+          .cartcontrol-wrapper
+            position absolute
+            right 0
+            bottom 12px
 
               
 

@@ -40,7 +40,7 @@
         </li>
       </ul>
     </div>
-    <shopcart :delivery-price="seller.deliveryPrice" :min-price="seller.minPrice"></shopcart>
+    <shopcart v-ref:shopcart :select-foods="selectFoods" :delivery-price="seller.deliveryPrice" :min-price="seller.minPrice"></shopcart>
   </div>
 </template>
 
@@ -62,18 +62,41 @@
           let height2 = this.listHeight[i + 1];
           // 之所以要判断个!height2，是因为更好的获取最后一个菜单项的索引
           if (!height2 || (this.scrollY >= height1 && this.scrollY < height2)) {
-            console.info('***dangqian菜单索引值***' + i);
+            // console.info('***dangqian菜单索引值***' + i);
             return i;
           }
         }
         return 0;
+      },
+      selectFoods() { // 用户已经选择的商品
+        let foods = [];
+        this.goods.forEach((good) => {
+          good.foods.forEach((food) => {
+            if (food.count) {
+              foods.push(food);
+            }
+          });
+        });
+        return foods;
       }
     },
     components: {
       shopcart,
       cartcontrol
     },
+    events: { // 事件监听(接受子组件派发的事件)
+      'cart.add'(target) { // 调用cartcontrol组件指定的方法
+        // console.log('goods下的events监听函数');
+        this._drop(target); // 定义_drop处理逻辑
+      }
+    },
     methods: {
+      _drop(target) { // 处理由子组件派发的事件逻辑
+        // console.log(target);
+        this.$nextTick(() => { // 性能优化
+          this.$refs.shopcart.drop(target); // goods父组件调用子组件的方法
+        });
+      },
       _initScroll() {
         this.menuScroll = new BScroll(this.$els.menuWrapper, {
           /**
@@ -87,9 +110,9 @@
           probeType: 3,
           click: true
         });
-        this.foodsScroll.on('scroll', (pos) => {
+        this.foodsScroll.on('scroll', (pos) => { // 食品列表页面，增加滚动事件监听
           this.scrollY = Math.abs(Math.round(pos.y));
-          console.info(this.scrollY);
+          // console.info(this.scrollY);
         });
       },
       _calculateHeight() {
@@ -102,7 +125,7 @@
           // console.info('元素' + height);
           this.listHeight.push(height);
         }
-        console.info(this.listHeight);
+        // console.info(this.listHeight);
       },
       selectMenu(index, event) {
         /**
@@ -114,8 +137,8 @@
         }
         let foodList = this.$els.foodsWrapper.getElementsByClassName('food-list-hook');
         let el = foodList[index];
-        this.foodsScroll.scrollToElement(el, 300);
-        console.log(index);
+        this.foodsScroll.scrollToElement(el, 300); // 是页面的el元素滚动到视区最上方
+        // console.log(index);
       }
     },
     data() {

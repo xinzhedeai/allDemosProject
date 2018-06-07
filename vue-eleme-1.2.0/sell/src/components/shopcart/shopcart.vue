@@ -17,6 +17,12 @@
         </div>
       </div>
     </div>
+    <div class="ball-container">
+      <div transition="drop" v-for="ball in balls" v-show="ball.show"
+      class="ball">
+        <div class="inner inner-hook"></div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -47,6 +53,28 @@ export default {
       type: Number,
       default: 0
     }
+  },
+  data() {
+    return {
+      balls: [
+        {
+          show: false
+        },
+        {
+          show: false
+        },
+        {
+          show: false
+        },
+        {
+          show: false
+        },
+        {
+          show: false
+        }
+      ],
+      dropBalls: []
+    };
   },
   computed: {
     totalPrice() {
@@ -80,6 +108,63 @@ export default {
         return 'enough';
       }
     }
+  },
+  methods: {
+    drop(el) {
+      // console.log('**嘿嘿 珍羞***');
+      for (let i = 0; i < this.balls.length; i++) {
+        let ball = this.balls[i];
+        if (!ball.show) {
+          ball.show = true;
+          ball.el = el;
+          this.dropBalls.push(ball);
+          return;
+        }
+      }
+    }
+  },
+  transitions: {
+    drop: { // 定义动画的三个钩子，进行相应的逻辑处理
+      beforeEnter(el) {
+        console.info('*&*动画钩子函数:' + el);
+        let count = this.balls.length;
+        while (count--) {
+          let ball = this.balls[count];
+          if (ball.show) { // 小球显示才进入下面的处理逻辑
+            // 这个方法，可以获取el元素相对视口的位置
+            let rect = ball.el.getBoundingClientRect();
+            let x = rect.left - 32;
+            let y = -(window.innerHeight - rect.top - 22);
+            el.style.display = '';
+            el.style.webkitTransform = `translate3d(0, ${y}px, 0)`;
+            el.style.transform = `translate3d(0, ${y}px, 0)`;
+            let inner = el.getElementsByClassName('inner-hook')[0];
+            inner.style.webkitTransform = `translate3d(${x}px, 0, 0)`;
+            inner.style.transform = `translate3d(${x}px, 0, 0)`;
+          }
+        }
+      },
+      enter(el) {
+        console.info('*&*动画钩子函数Enter:' + el);
+        // 声明下面这段注释，那么当变量没有被引用的时，也不会报错
+        /* eslint-disable no-unused-vars */
+        let rf = el.offsetHeight;
+        this.$nextTick(() => {
+          el.style.webkitTransform = 'translate3d(0, 0, 0)';
+          el.style.transform = 'translate3d(0, 0, 0)';
+          let inner = el.getElementsByClassName('inner-hook')[0];
+          inner.style.webkitTransform = 'translate3d(0, 0, 0)';
+          inner.style.transform = 'translate3d(0, 0, 0)';
+        });
+      },
+      afterEnter(el) {
+        let ball = this.dropBalls.shift();
+        if (ball) {
+          ball.show = false;
+          el.style.display = 'none';
+        }
+      }
+    }
   }
 };
 </script>
@@ -98,6 +183,7 @@ export default {
       display flex
       background-color #141d27
       font-size 0
+      
       .content-left
         flex 1
         .logo-wrapper
@@ -174,4 +260,19 @@ export default {
           &.enough
             background-color #00b43c
             color #fff
+
+    .ball-container
+      .ball
+        position fixed
+        left 32px
+        bottom 22px
+        z-index 200
+        &.drop-transition
+          transition all .4s
+          .inner
+            width 16px
+            height 16px
+            border-radius 50%
+            background rgb(0, 160, 220)
+            transition all .4s cubic-bezier(0,1.67,.23,.85);
 </style>

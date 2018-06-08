@@ -15,7 +15,7 @@
         <li v-for="item in goods" class="food-list food-list-hook">
           <h1 class="title">{{item.name}}</h1>
           <ul>
-            <li v-for="food in item.foods" class="food-item border-1px">
+            <li v-for="food in item.foods" class="food-item border-1px" @click="selectFood(food, $event)">
               <div class="icon">
                 <img :src="food.icon" width="57" height="57">
               </div>
@@ -42,12 +42,14 @@
     </div>
     <shopcart v-ref:shopcart :select-foods="selectFoods" :delivery-price="seller.deliveryPrice" :min-price="seller.minPrice"></shopcart>
   </div>
+  <food :food="selectedFood" v-ref:food></food>
 </template>
 
 <script type="text/ecmascript-6">
   import BScroll from 'better-scroll';
   import shopcart from 'components/shopcart/shopcart';
   import cartcontrol from 'components/cartcontrol/cartcontrol';
+  import food from 'components/food/food';
   const ERR_OK = 0;
   export default {
     props: {
@@ -82,7 +84,8 @@
     },
     components: {
       shopcart,
-      cartcontrol
+      cartcontrol,
+      food
     },
     events: { // 事件监听(接受子组件派发的事件)
       'cart.add'(target) { // 调用cartcontrol组件指定的方法
@@ -91,9 +94,17 @@
       }
     },
     methods: {
+      selectFood(food, event) {
+        if (!event._constructed) {
+          return;
+        }
+        console.log('*******选择商品*******');
+        this.selectedFood = food;
+        this.$refs.food.show(); // 调用子组件的show方法，显示
+      },
       _drop(target) { // 处理由子组件派发的事件逻辑
         // console.log(target);
-        this.$nextTick(() => { // 性能优化
+        this.$nextTick(() => { // 性能优化，异步执行下落动画
           this.$refs.shopcart.drop(target); // goods父组件调用子组件的方法
         });
       },
@@ -145,7 +156,8 @@
       return {
         goods: [],
         listHeight: [],
-        scrollY: 0
+        scrollY: 0,
+        selectedFood: {}
       };
     },
     created() {

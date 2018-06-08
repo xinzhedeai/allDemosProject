@@ -58,7 +58,7 @@
 <style scoped lang="stylus" rel="stylesheet/stylus">
   .cartcontrol
     // font-size 0
-    .cart-decrease,
+    .cart-decrease
       display inline-block
       padding 6px
       transition all .4s linear 

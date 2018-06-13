@@ -29,7 +29,7 @@ router.map({
 });
 router.start(app, '#app');
 
-router.go('/goods');
+// router.go('/goods');
 /* eslint-disable no-new */
 // new Vue({
 //   el: 'body',

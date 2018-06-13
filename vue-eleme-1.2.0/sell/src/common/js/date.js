@@ -1,5 +1,4 @@
 export function formatDate(date, fmt) {
-  console.info('函数执行');
   if (/(y+)/.test(fmt)) { // 进行正则匹配后，匹配后的数据直接就被内置对象RegExp捕获了。。
     /*
       1、RegExp.$1可以直接拿到 上面test语句所匹配的第一组值
@@ -16,11 +15,9 @@ export function formatDate(date, fmt) {
     's+': date.getSeconds()
   };
   for (let k in o) {
-    console.info(o);
-    console.log(k);
     if (new RegExp(`(${k})`).test(fmt)) {
       let str = o[k] + '';
-      fmt = fmt.replace(RegExp.$1, (RegExp.$1.length === 1) ? str : padLeftZero(str));
+      fmt = fmt.replace(RegExp.$1, padLeftZero(str));
     }
   }
   return fmt;

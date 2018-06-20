@@ -113,6 +113,20 @@
         }
       }
     },
+    events: { // 监听子组件派送过来的时间，并触发
+      'ratingtype.select'(type) {
+        this.selectType = type;
+        this.$nextTick(() => {
+          this.scroll.refresh();
+        });
+      },
+      'content.toggle'(onlyContent) {
+        this.onlyContent = onlyContent;
+        this.$nextTick(() => {
+          this.scroll.refresh();
+        });
+      }
+    },
     components: {
       star,
       split,

@@ -17,29 +17,35 @@
 </template>
 
 <script type="text/ecmascript-6">
-import header from 'components/header/header.vue';
+  import { urlParse } from 'common/js/util';
+  import header from 'components/header/header.vue';
 
-const ERR_OK = 0;
-export default {
-  data() {
-    return {
-      seller: {}
-    };
-  },
-  created() {
-    this.$http.get('/api/seller').then((response) => {
-      response = response.body;
-      console.log(response);
-      if (response.errno === ERR_OK) {
-        this.seller = response.data;
-        console.log(this.seller);
-      }
-    });
-  },
-  components: {
-    'v-header': header
-  }
-};
+  const ERR_OK = 0;
+  export default {
+    data() {
+      return {
+        seller: { // 传递seller变量的时候，传递一个请求参数id
+          id: (() => {
+            let queryParam = urlParse();
+            return queryParam.id;
+          })()
+        }
+      };
+    },
+    created() {
+      this.$http.get('/api/seller?id=' + this.seller.id).then((response) => {
+        response = response.body;
+        console.log(response);
+        if (response.errno === ERR_OK) {
+          this.seller = response.data;
+          console.log(this.seller);
+        }
+      });
+    },
+    components: {
+      'v-header': header
+    }
+  };
 </script>
 
 <style scoped lang="stylus" rel="stylesheet/stylus">

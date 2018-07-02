@@ -1,0 +1,8 @@
+{
+  "name": "",
+  "version": "",
+  "description": "布局模块规划：\r   header -顶部栏\r   nav    -导航区\r   search -搜索区\r   main   -主内容区\r     -section\r     -options选项\r     -main_ad广告\r   slider -侧边栏\r     section_slide\r   footer\r 样式重置\r   量身定制，而不要抄袭大公司的样式重置标准\r 公共样式\r   fl、fr、wrap、clear",
+  "dependencies": {
+    "jquery": "^1.11.1"
+  }
+}

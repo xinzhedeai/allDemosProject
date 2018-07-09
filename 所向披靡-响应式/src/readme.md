@@ -61,5 +61,52 @@
         - font-size: 62.5% 1rem = 10px
         - font-size: 100%  1rem = 16px
         缺点：rem在ie8及以下不支持
+7. flex
+    兼容性，不支持ie9及以下的浏览器
+
+8. 清除浮动
+    1. 浮动元素后面添加此元素<div style="clear:both"></div>
+    2. 给浮动元素的父容器添加样式overflow: auto; 也可以清楚容器内部元素的浮动。原因是添加overflow：       hidden样式后，浮动元素又回到了容器中。
+    3.给浮动元素的父亲元素添加浮动样式（这种方式不推荐）
+    4.after伪元素
+9. BFC
+    1. float可以触发BFC
+    2. overflow
+    3. display：table-cell/table-caption/inline-block
+    4. position: fixed/absolute
+10. 防止边距合并的方法
+    .clearfix: after,
+    .clearfix: before{
+        content: '';
+        display: table;
+    }
+    .clearfix: after{
+        clear: both;
+    }
+11. line-height的高度值，中文chrome默认最低单位长度12px，而英语版本则是10px甚至更低。
+12. html空白符, 每行代码后面的换行符就就成为空白符。 这会使display：inline-block的元素之间产生一个间隙。
+    ```
+        <li>heo</li>
+        <li>222</li>
+    ```
+    - 解决方法
+        1. 将换行的元素弄为同一行
+        2. 设置父元素font-size： 0； 子元素font-size： 1.2rem；
+        3. 将结束标签和起始标签
+            ```
+                <li>heo
+                </li><li>222
+             ```
+        4. 不加上结束标签
+             ```
+                <li>heo
+                <li>222
+                <li>222
+            ```
+        5. 设置负的边距
+        6. white-space-collapsing (css4草案中提出的属性。 兼容性不好，展望未来。)
+        7. 如果仅仅是要背景色进行透明显示，那么使用rgba的背景色设置。
+           *不要设置`opacity`属性，因为这个属性不仅会使背景色透明，连文字也会变透明。*
+
 
 

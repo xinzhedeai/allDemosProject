@@ -31,10 +31,223 @@
         float: left !important;
     }
     .text-right{
-        float: right !important;
+        text-align: right !important;
     }
     .text-left{
-        float: left !important;
+        text-align: left !important;
+    }
+    .text-center{
+        text-align: center !important;
     }
 
+    .hide{
+        display: none !important;
+    }
+    .show{
+        display: block !important;
+    }
 
+    .invisible{
+        visibility: hidden;
+    }
+    .text-hide{
+        font: 0/0 a;
+        color: transparent;
+        text-shadow: none;
+        background-color: transparent;
+        border: 0;
+    }
+    .clearfix:after{
+        content: '';
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+/* 清楚浮动的另一种方式 改变BFC清除浮动 */
+    .clearfix:after{
+        content: '';
+        display: table;
+        clear: both;
+    }
+/* 浏览器更新提示 */
+    .browserupgrade{
+        margin: 0;
+        padding: 1rem;
+        background-color: #ccc;
+    }
+/* 自定义页面样式 */
+    body{
+        font-size: 1.2rem;
+        line-height: 1.5;
+        background-color: #f7f7f7;
+    }
+    a{
+        color: #666666;
+        text-decoration: none;
+    }
+    a:hover, a:active{
+        color: #00aaee;
+        text-decoration: underline0;
+    }
+/* 头部 */
+    header .top ul{
+        text-align: right;
+    }
+     header .top ul li{
+         display: inline-block; /* 使li元素在一行显示 */
+         background-color: #f00;
+     }
+     header .top ul li + li{ /* 除了第一个li不加左竖线--小技巧 */
+         border-left: 1px solid #999;
+         margin-left: -3px; /* 这个固定值并不好，因为不同浏览器的空隙是不一样的。。 */
+        
+     }
+     header .top ul li a {
+         display: inline-block;
+         padding: 0 1.5rem;
+         color: #fff;
+     }
+
+     header .main{
+         padding: 0;
+     }
+     header .main .brand{
+         float: left;
+         padding: 1rem 1.5rem;
+     }
+     header .main ul{
+         text-align: right;
+     }
+     header .main ul li{
+         display: inline-block;
+         border-left: 1px solid #f0ede9;
+     }
+
+     header .main ul li a {
+         display: inline-block;
+         padding: 0 3rem;
+         line-height: 5.5rem;
+         font-size: 1.6rem;
+
+     }
+/* 网站主要内容 */
+    .container{
+        width: 100%;
+    }
+
+    .transaction{
+        width: 100%;
+        background-color: #7C7365;
+    }
+
+    .trans-content{
+        font-size: 1.4rem;
+        padding: .5rem 0 .2rem 1.5rem;
+    }
+
+    .trans-data, .trans-report{
+        line-height: 2.0rem;
+        font-size: 1.4rem;
+    }
+
+    .trans-data{
+        float: left;
+        color: #fff;
+    }
+
+    .trans-data span{
+        margin: .2rem 0 .2rem .5rem;
+    }
+
+    .trans-money{
+        border-radius: .3rem;
+        background-color: #F2F1F0;
+        color: #FBA400;
+        display: inline-block;
+        padding: .2rem 1rem;
+        letter-spacing: 3px;
+        box-shadow: 1px 2px 1px #333 inset;
+        font-size: 2rem;
+    }
+
+    .trans-report{
+        text-align: right;
+        padding: 0.5rem 1rem;
+    }
+
+    .trans-report a{
+        color: #fff;
+    }
+
+/* 底部导航 */
+    footer{
+        width: 100%;
+        padding: 3rem 0 5rem;
+        background-color: #ededed;
+    }
+    footer ul{
+        text-align: center;
+    }
+
+    footer ul li {
+        display: inline-block;
+    }
+
+    footer ul li .icon{
+        display: inline-block;
+        margin-right: 1.5rem;
+        background: url() no-repeat;
+        background-size: 466px 447px;
+        overflow: hidden;
+        text-indent: -999rem; /* 隐藏文字 */
+    }
+
+    footer ul li .icon-zfywxk{
+        width: 38px;
+        height: 27px;
+        background-position: -369px -45px;
+    }
+
+    footer ul li .icon-pcirk {
+        width: 78px;
+        height: 27px;
+    }
+    footer ul li .iocn-visayz{
+        width: 36px;
+        height: 27px;
+        background-position: -426px -90px;
+    }
+
+    footer ul li .iocn-vsjmfw{
+        width: 63px;
+        height: 27px;
+        background-position: -401px -186px;
+    }
+
+    footer ul li .iocn-wlgs{
+        width: 78px;
+        height: 27px;
+        background-position: -110px -96px;
+    }
+
+    footer ul li .iocn-rzcx{
+        width: 75px;
+        height: 27px;
+        background-position: 0 -320px;
+    }
+
+    footer ul li .iocn-bjgs{
+        width: 30px;
+        height: 30px;
+        margin-right: 0;
+        background-size: 30px;
+        background-image: url('../img/cert2.png');
+    }
+
+    footer p{
+        text-align: center;
+        color: #666;
+        font-size: 1.2rem;
+        margin: 2rem auto;
+    }

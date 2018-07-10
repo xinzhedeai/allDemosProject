@@ -277,10 +277,61 @@
 5. [htm5shiv] // 使ie8及以下的浏览器支持h5标签
 6. [respond] // 是的ie8及一下的ie浏览器支持媒体查询
 7. [modernizr] // 一个js库，检测浏览器对h5和css3的支持情况
+    在页面最顶部引入这个js库之后， 可以在页面中查看html的class属性：
+    比如浏览器支持svg元素，那么会有svg这个类。如果不支持，那么会有no-svg这个类
+    通过上面地支持样式类，可以在css中有针对性的hack样式。
+    
+    ```
+        .svg .logo{ /* 支持svg的 */
+            background-image: url(logo.svg)
+        }
+        .no-svg .logo{ /* 不支持svg的替代方案 */
+            background-image: url(logo.png)
+        }
+    ```
+8. 去兼容性检查网站查看下各个浏览器对某个元素或样式的支持情况
+    [http://wwww.caniuse.com] (http://wwww.caniuse.com)
 
 
+# 如何再多个设备上进行测试
+1. 当手里有很多设备等待测试，在修改css后，怎样才能使得所有的设备刷新呢？
+   - [省时的浏览器同步测试工具](www.browsersync.cn) **超级好用**
+     - npm i -g browser-sync 安装 
+     - browser-sync start 启动
+       /**
+        启动可配置的参数：
+          --server “src” // 指定服务器启动是，根路径是哪个文件夹下
+          --files "src" // 服务器 监听files下的src目录改变的文件
+            1. files后面的也可以使用通配符 --files "src/css/*.css"
+       **/
+       browser-sync start --server "src" --files "src"
 
 
+# 如何打包发布
+1. 在发布前还可以做代码优化
+    - 压缩
+        [手动压缩js](https://javascript-minifier.com)
+            缺点： 太耗费时间了。。
+        
+    - 合并
+    - 增加版本号
+2. 使用打包工具
+    - grunt 自动化构建工具
+    - gulp  自动化构建工具
+      [gulp官网](www.gulpjs.com.cn)
+        1. npm i gulp --save-dev 安装
+        2. gulp -v 查看版本
+        3. 
+        ```
+            // 安装gulp插件(异步的，可以同时写多个安装插件)
+            npm i gulp-rev gulp-rev-replace gulp-useref gulp-filter gulp-uglify gulp-csso --save
+            
+        ```
+        4. 去npm官网查找gulp插件
+        5. 编写完task 执行gulp命令
+    - debug 当过滤文件获取流的时候，如果页面中没有使用相关的引用，得不到文件，那么就会引发***filter不是一个function的错误
+
+    - webpack（静态资源打包工具）
 
 
 

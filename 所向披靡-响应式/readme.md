@@ -90,6 +90,6 @@
 
 
 ##其他
-1.https://abookapart.com/  国外响应式参考网站
-
+  1. https://abookapart.com/  国外响应式参考网站
+  2. gitignore文件需要放到项目的根目录下才能与版本工具进行同步。否则无效
   

@@ -2,7 +2,7 @@
 # editorfoncig.org
 
 # 最顶层的config文件，不用再找了。
-root = true 
+root = true
 
 # 下面的规则应用到所有的文件中
 [*]
@@ -19,9 +19,9 @@ indent_style = space
 insert_final_newline = true
 
 # 如果有多个空白行，保存文件时自动去掉
-trim_trailing_whitespace = true
+# trim_trailing_whitespace = true
 
 [*.md]
-trim_trailing_whitespace = false
+# trim_trailing_whitespace = false
 
 

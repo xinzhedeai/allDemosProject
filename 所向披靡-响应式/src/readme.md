@@ -230,3 +230,57 @@
 
 
 ######### NODEJS ###########
+#npmm
+1. https://www.npmjs.com/
+    - jquery与jQuery同名的，npm下载会覆盖前面的文件夹
+    - 下载包尽可能的用小写
+    - "dependencies":{
+        "jQuery": '1.7.4'  // 精确匹配
+        "jQuery": '^1.7.4' // ~表示前一位要相同
+        "jQuery": '~1.7.4' // ~表示前两位需要一直，后面一位版本可以不同
+    }
+2. 命令
+    - npm i // npm install的简写
+    - npm i --production // 下载生产需要的依赖包 dependentcies：{}
+    - npm i --dev // 下载开发需要的包 devDepedentcies{}
+    - npm install -g express // 全局安装，任何项目都可以使用这个了。。
+        express --version
+        express // 启动express服务
+    
+    - npm install gulp --save // 直接保存到dependencies里面
+    - npm install gulp --save-dev // 直接保存到devDependencies
+    - npm uninstall gulp --save-dev // 卸载生产/或开发环境下的依赖包
+    - npm update jquery/无 // 更新jquery/全部npm包
+    - npm install -h // 帮助手册
+
+3. 基于node的轻量级服务器
+    1. http-server
+        - https://github.com/indexzero/http-server
+        - npm i http-server -g
+        - http-server --version/ -v // 启动服务 8080端口默认
+            http://192.168.2.233:8080 // 局域网远程访问地址
+            http://127.0.0.1:8080
+        - http-server src -p 8888 // 改变服务器的端口号 
+
+############## 兼容性 ##############
+## PC ##
+1. 火狐浏览器下，分数进位规则和chrome不一样
+2. IE tester测试工具
+3. 虚拟机软件
+    virtualBox(免费)
+    vmware
+## 移动端 ##
+1. http://compass.umeng.com/?&utm_source=zzbanner#/equipment?_k=8qgwno // 设备使用数量
+2. [云测试](https://www.testin.cn/)
+3. [安卓模拟器](http://www.genymotion.net/) // 基于virtualBox  这个虚拟机和真机和真机的差别不大
+4. [浏览器hack](http://browserhacks.com/) // 找到各个浏览器hack的知识。hack：只有某个浏览器才认识的一些样式单独设定
+5. [htm5shiv] // 使ie8及以下的浏览器支持h5标签
+6. [respond] // 是的ie8及一下的ie浏览器支持媒体查询
+7. [modernizr] // 一个js库，检测浏览器对h5和css3的支持情况
+
+
+
+
+
+
+

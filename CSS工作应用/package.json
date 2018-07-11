@@ -1,0 +1,5 @@
+{
+  "name": "",
+  "version": "",
+  "description": "1. 常见元素\r     - <base href=\"/\"> 全局定义a的超链接基本路径\r     - <meta charset=\"uft-8\">\r     - form[enctype]: 针对post对表单值进行编码\r       1. url-encode\r       2. form-data 这个格式可以上传文件\r       3. option[selected] // 选中\r       4. button\r         <button type=\"button\">\r         <button type=\"submit\">\r         <button type=\"reset\">\r         <input type=\"submit\"> // 也是个按钮"
+}

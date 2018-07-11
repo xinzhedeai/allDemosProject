@@ -317,7 +317,7 @@
     - 增加版本号
 2. 使用打包工具
     - grunt 自动化构建工具
-    - gulp  自动化构建工具
+    - gulp  自动化构建工具（不局限打包）
       [gulp官网](www.gulpjs.com.cn)
         1. npm i gulp --save-dev 安装
         2. gulp -v 查看版本
@@ -327,11 +327,19 @@
             npm i gulp-rev gulp-rev-replace gulp-useref gulp-filter gulp-uglify gulp-csso --save
             
         ```
-        4. 去npm官网查找gulp插件
+        4. 去npm官网查找gulp插件   eg：搜索gulp-
         5. 编写完task 执行gulp命令
+        6. /*! 这里的注释不会被打包掉 */  
+        7. 好用的插件
+            - gulp-watch // 监控文件开遍，自动打包
+            - gulp-postcss // 为css添加浏览器兼容前缀 
+            - gulp-concat // 多个合并一个文件
+            - gulp-responsive // 自动把提供的图片生成一系列的响应式图片
+
+
     - debug 当过滤文件获取流的时候，如果页面中没有使用相关的引用，得不到文件，那么就会引发***filter不是一个function的错误
 
-    - webpack（静态资源打包工具）
+    - webpack（静态资源打包工具）类似模块加载sea require等方面webpack比较好
 
 
 

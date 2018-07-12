@@ -24,15 +24,29 @@
        png24 - 2^24色 + 不支持透明
        png32 - 2^24色 + 支持透明 24+8（alpha颜色值）
        [在线png转化为webp](http://zhitu.isux.us/)
+       fis构建工具-png替换为webp
+       ```
+        fis.match('*.{jpg,png}',{
+          rExt: '.webp',
+          parser: fis.plugin('webp',{
+            quality: 60 // 压缩百分之60
+          })
+        })
+        // fis的inline语法  inline之后，html中的图片会变大
+        var inlineImage = __inline('./yindao.webp); 
+
+       ```
 
     3. 不同图片的常用业务场景
       1. jpg有损压缩，压缩率高，不支持透明 （不需要透明图片的场景）
       2. png支持透明， 浏览器兼容好（8、24、32）（需要透明图片的场景）
       3. webp压缩程度更好，在ios webview有兼容性问题 （安卓全部）
+        png或jpg图片大小小于8kb，那么建议使用内联。
       4. svg矢量图，代码内嵌，相对较小，图片样式相对简单的场景 
     4. css雪碧图
       - 有点减少http请求数
       - 整合图片比较大时，一次加载比较慢
+      [在线制作雪碧图](http://www.spritecow.com) // 选中雪碧图中的图标可以生成css代码
     5. Image inline（图片base64编码，当图片特别小的时候，为了减少http请求次数可以使用这个方法
       - 将图片的内容内嵌到html当中 -> 减少你的网站的http请求数量
     6. 使用矢量图
@@ -96,6 +110,13 @@
       缺点：不能压缩es6代码。需要使用fis3构建，利用babel将es6转化为es5然后在进行压缩
 
   2. 使用node.js实现文件合并
+# HTML渲染过程 #
+  1. 特点
+    - 顺序执行、并发加载
+    - 是否依赖
+    - 依赖关系
+    - 引入方式
+    
 
 
 # TIPS

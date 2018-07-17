@@ -245,6 +245,68 @@
     - 隐藏原生input
     - ：checked + label
 
+#css布局
+  1. table表格布局
+  2. float浮动+margin
+  3. inline-block布局
+  4. flexbox布局
+## 浮动
+  - 元素浮动
+  - 脱离文档流但脱离文本流（与文字挨着时候，会把文本挤出去。 文字环绕图片效果）
+  - 对自身“形成块”（BFC）
+  - 位置尽量靠上
+  - 位置尽量靠左（right尽量靠右）
+  - 对兄弟元素的影响：
+    1. 上面贴非float元素
+    2. 旁边贴float元素
+    3. 不影响其他块级元素位置
+    4. 影响其他块级元素内部文本
+    5. 对父级元素影响
+      - 从布局上消失
+      - 高度坍塌
+  * 经典的三栏布局 *
+    - 左中右三个元素，中间的不是浮动的。如果想让三个元素都在一个
+      行上，那么需要将左右浮动元素放到前面，剩下的空间留给不浮动的div元素。
+# inline-block
+  - 像文本一样排block元素
+  - 没有清楚浮动等问题
+  - 需要处理间隙
+  * tips *
+    1. 自适应有限制
+    2. 定宽的布局可以
+
+
+## css面试真题
+  - 实现两、三栏布局方式
+    1. table表格布局
+    2. float浮动+margin（兼容性好）
+    3. inline-block布局
+    4. flexbox布局
+      1. flex：1； 等分比例
+        如果想让一个元素的宽度固定，那么些固定像素即可。width：2px；
+
+  - positon：absolute、fixed有什么区别？
+    1. 前者相对最近的absolute/relative
+    2. 后者相对屏幕（移动端是viewport）
+  - display： inline-block的间隙
+    原因： 字符间距
+    解决：消灭字符或者消灭间距（父元素fontsize：0；）
+
+  - 如何清除浮动
+    1. 让盒子负责自己的布局
+       overflow： hidden（auto）
+    2. ::after{clear:both;}
+  - 如何适配移动端页面
+    1. viewport
+    2. rem/viewport/media query（处理屏幕大小的问题）
+    3. 设计上： 隐藏+折行+自适应空间
+
+##tips
+  1. div的display：table可以模拟table布局，实现元素垂直居中
+  2. display：relative的元素。不会因为自己的偏移而影响布局。
+  3. absolute和fixed都是脱离文档流的。
+  4. 绝对定位的元素需要指定高度，百分比无效。因为不能与
+     父元素的高度绑定。
 
 
 

@@ -26,7 +26,18 @@
 }
 .login-b-b-r{
 	float: left;
+	position: relative;
 	width: 80%;
+}
+.yzm{
+	position: absolute;
+	top: 8px;
+	right: 10px;
+	padding: 5px 14px;
+	border: 1px solid #f00;
+	font-size: 13px;
+	color: red;
+	
 }
 .login-b-b-r input{
 	height: 40px ;
@@ -52,4 +63,16 @@
 .btn p a{
 	color: #888;
 	font-size: 13px;
+}
+.sdk-a{
+	overflow: hidden;
+	margin-top: 50px;
+
+}
+.sdk-a a{
+	float: left;
+	width: 50%;
+	font-size: 30px;
+	text-align: center;
+	color: #000;
 }

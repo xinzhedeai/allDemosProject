@@ -300,17 +300,105 @@
     1. viewport
     2. rem/viewport/media query（处理屏幕大小的问题）
     3. 设计上： 隐藏+折行+自适应空间
+    * 注意 *
+      1. 大范围的要放到最上面
+      ```
+        @media (max-width: 375px){ // 小于等于375px生效
+          html{font-size: 12px;}
+        }
+        @media (max-width: 255px) { // 小于等于255px的才生效
+          html{} 
+        }
+        如果大小顺序放反了，那么大范围的会覆盖小范围的样式。
 
-##tips
+      ```
+      2. 在媒体查询中，尽可能不用rem，由于会存在小数点的问题，导致不精确。
+## background
+  1. 在雪碧图上，background-position添加位置信息
+     加上过渡，可以达到很不错的效果。
+  2. background-size： 100% 100%；// 是根据容器大小决定的
+                       cover 不会压缩或拉伸图片 覆盖容器
+                       contain 以一个较长的边为准进行覆盖。填充不上那么就留白
+## clip-path
+  1. 对容器进行裁剪
+    ```
+      // 占位是不变的 但是容器多余部分被裁掉了
+      clip-path:insert(100px 50px);
+    ```
+  2. 常见几何图形
+     ```
+      // 在左上角100px 100px位置绘制一个半径为50px的圆形
+      clip-path: circle(50px at 100px 100px);
+     ```
+     * 特殊效果 *
+      ``` 心跳的效果
+        a{clip-path: circle(50px at 100px 100px); transition: clip-path .4s;}
+        a:hover{clip-path: circle(80px at 100px 100px);}
+      ```
+      ```绘制不规则多边形
+        clip-path: polygon(50% 0%, 100% 50%，50% 100%，0% 50%);
+      
+      ```
+  3. 自定义路径
+    ```
+      clip-path: url(#clipPath);
+      <svg>
+        <defs>
+          <clipPath id="clipPath">
+            <circle cx="60" cy="60" r="50" fill="#34538b"/>
+          </clipPath>
+        </defs>
+      </svg>
+    ```
+# transform
+  - tranform的各个属性值的顺序是不可以随意交换的
+    由于变化是根据矩阵变化的。顺序的不同会导致最终效果的不同。
+## tips
   1. div的display：table可以模拟table布局，实现元素垂直居中
   2. display：relative的元素。不会因为自己的偏移而影响布局。
   3. absolute和fixed都是脱离文档流的。
   4. 绝对定位的元素需要指定高度，百分比无效。因为不能与
      父元素的高度绑定。
+  5. 阴影和其元素样式式一模一样的。
+     可以使用阴影box-shadow复制一个元素
+     拓展值为负的，会减少阴影的大小。而不会消失。
+     eg：效果，一个元素画什么什么东西，都是用box-shadow实现的
+         任何形状可以使用box-shadow画出一个个点拼起来。
+    box-shadow特性：
+      - 营造层次感 
+      - 充当没有宽度的边框
+      - 特殊效果（一个元素制作机器猫）
+  
 
+## css面试真题
+  1. 如何用一个div画xxx
+    - box-shadow无限投影
+    - ::before
+    - ::after
+  2. 如何产生不占空间的边框
+    1. box-shadow
+    2. outline
+  3. 如何实现半圆、扇形等图形
+    - border-radius组合：
+      1. 有无边框
+      2. 边框粗细
+      3. 圆角半径
+  4. 如何实现3d效果
+    ```
+      perspective: 500px;
+      transform-style: preserve-3d;
+      transform: translate rotate ...
+    ```
 
+# css动画
+  - transition补间动画（有始有终）
+    transition-delay： 1s； 简写是放到width的前面
+    用，号隔开，可以指定多个属性的过渡。
+  - keyframe关键帧动画
+  - 逐帧动画
+  * tips *
+    chrome浏览器有针对动画测试的工具Animations
 
-    
 
 
 

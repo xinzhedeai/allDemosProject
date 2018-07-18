@@ -1,0 +1,11 @@
+*{padding: 0; margin: 0;}
+.mui-bar-tab .mui-tab-item.mui-active{
+	color: #fb1647 !important;
+}
+#nav_bg{
+	background-color: #FB1647;
+	color: #fff;
+}
+#nav_bg a, #nav_bg h1{
+	color: #fff;
+}

@@ -139,6 +139,15 @@
   - 减少无效资源的加载
   - 并发加载的资源过多会阻塞js的加载，影响网站的正常使用
   *案例： 手淘*
+  - 插件 zepto.lazyload.js
+    ```
+    <script src="zepto.min.js">
+    <script src="zepto.lazyload.js">
+    <img src="" class="image-item" lazyload="true" data-original="http://tipian.jpg">
+    <script>
+      $('img[data-original][lazyload]').lazyload();
+    </script>
+    ```
   - 方法
     1. 先设置占位符 先设定好要加载图片的高宽
 # 预加载
@@ -146,12 +155,53 @@
   - 资源使用到时能从缓存中加载， 提升用户体验
   - 页面展示的依赖关系维护
   *案例： 立即抽奖 奖品选中状态，不同的图片切换*
+  - 方法
+    1. 直接在页面html中img标签加载
+    2. 使用image对象
+    ```
+      var  image = mew Image();
+      image.src = 'http://image.jpg";
+    ```
+    3. 使用xmlhttprequest
+      优点： 解决跨域的问题、更精细的控制加载过程
+    4. preload.js
+
+# 重绘与回流
+  - 回流：
+    1. 当render tree因为元素的规模尺寸、布局、隐藏等改变而需要重新构建，称为回流。
+    2. 当页面布局和几何图形属性改变时需要回流
+    *触发页面冲布局的属性*
+      - 盒子模型相关属性会触发重布局
+        `width、height、padding、margin、display、border-width、border、min-height`
+      - 定位属性及浮动
+        `top、bottom、left、right、position、float、clear`
+      - 改变节点内文字结构
+      `text-align、overflow-y、font-weight、overflow、font-family、line-height、vertical-align、white-space、font-size`
+
+  - 重绘
+    1. 当render tree中的一些元素需要更新属性， 而这些属性只是影响元素的外观， 风格，而不会影响布局的，比如： background-color。
+       则就叫称为重绘。
+  *回流必将引起重绘，而重绘不一定会引起回流*
+  **优化点**
+  1. 将频繁重绘回流的DOM元素单独作为一个独立层，那么这个DOM元素的重绘和回流的影响只会在这个图层中
+     如何将dom元素变为新的独立图层？
+     chrome创建图层的条件
+      1. 3D或透视变换css属性（perspective transform）
+      2. 使用加速视频解码的<video>节点
+      3. 拥有3D（WebGL）上下文或加速的2D上下文的<canvas>节点
+      4. 混合插件（如flash）
+      5. 对自己的opacity做css动画或使用一个动画webkit变换的元素
+      6. 拥有加速css过滤器的元素
+      7. 一个元素拥有一个子元素，该子元素在自己的层里
+      8. 在复合层上面渲染的元素
+  2. 避免使用触发重绘、回流的css属性
+  3. 将重绘、回流的影响范围限制在单独的图层之内
 
 
 
-# TIPS
+# TIPS 
   1. network观察请求的总耗时，需要chrome低版本内核才可以看到。比如：360
-  2.  
+  2. chrome浏览器查看渲染过程方法  perform面板下 memory/enable/screenshot
 
 
 

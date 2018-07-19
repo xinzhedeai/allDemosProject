@@ -300,17 +300,319 @@
     1. viewport
     2. rem/viewport/media query（处理屏幕大小的问题）
     3. 设计上： 隐藏+折行+自适应空间
+    * 注意 *
+      1. 大范围的要放到最上面
+      ```
+        @media (max-width: 375px){ // 小于等于375px生效
+          html{font-size: 12px;}
+        }
+        @media (max-width: 255px) { // 小于等于255px的才生效
+          html{} 
+        }
+        如果大小顺序放反了，那么大范围的会覆盖小范围的样式。
 
-##tips
+      ```
+      2. 在媒体查询中，尽可能不用rem，由于会存在小数点的问题，导致不精确。
+## background
+  1. 在雪碧图上，background-position添加位置信息
+     加上过渡，可以达到很不错的效果。
+  2. background-size： 100% 100%；// 是根据容器大小决定的
+                       cover 不会压缩或拉伸图片 覆盖容器
+                       contain 以一个较长的边为准进行覆盖。填充不上那么就留白
+## clip-path
+  1. 对容器进行裁剪
+    ```
+      // 占位是不变的 但是容器多余部分被裁掉了
+      clip-path:insert(100px 50px);
+    ```
+  2. 常见几何图形
+     ```
+      // 在左上角100px 100px位置绘制一个半径为50px的圆形
+      clip-path: circle(50px at 100px 100px);
+     ```
+     * 特殊效果 *
+      ``` 心跳的效果
+        a{clip-path: circle(50px at 100px 100px); transition: clip-path .4s;}
+        a:hover{clip-path: circle(80px at 100px 100px);}
+      ```
+      ```绘制不规则多边形
+        clip-path: polygon(50% 0%, 100% 50%，50% 100%，0% 50%);
+      
+      ```
+  3. 自定义路径
+    ```
+      clip-path: url(#clipPath);
+      <svg>
+        <defs>
+          <clipPath id="clipPath">
+            <circle cx="60" cy="60" r="50" fill="#34538b"/>
+          </clipPath>
+        </defs>
+      </svg>
+    ```
+# transform
+  - tranform的各个属性值的顺序是不可以随意交换的
+    由于变化是根据矩阵变化的。顺序的不同会导致最终效果的不同。
+## tips
   1. div的display：table可以模拟table布局，实现元素垂直居中
   2. display：relative的元素。不会因为自己的偏移而影响布局。
   3. absolute和fixed都是脱离文档流的。
   4. 绝对定位的元素需要指定高度，百分比无效。因为不能与
      父元素的高度绑定。
+  5. 阴影和其元素样式式一模一样的。
+     可以使用阴影box-shadow复制一个元素
+     拓展值为负的，会减少阴影的大小。而不会消失。
+     eg：效果，一个元素画什么什么东西，都是用box-shadow实现的
+         任何形状可以使用box-shadow画出一个个点拼起来。
+    box-shadow特性：
+      - 营造层次感 
+      - 充当没有宽度的边框
+      - 特殊效果（一个元素制作机器猫）
+  
 
+## css面试真题
+  1. 如何用一个div画xxx
+    - box-shadow无限投影
+    - ::before
+    - ::after
+  2. 如何产生不占空间的边框
+    1. box-shadow
+    2. outline
+  3. 如何实现半圆、扇形等图形
+    - border-radius组合：
+      1. 有无边框
+      2. 边框粗细
+      3. 圆角半径
+  4. 如何实现3d效果
+    ```
+      perspective: 500px;
+      transform-style: preserve-3d;
+      transform: translate rotate ...
+    ```
 
+# css动画
+  - transition补间动画（有始有终）
+    transition-delay： 1s； 简写是放到width的前面
+    用，号隔开，可以指定多个属性的过渡。
+  - keyframe关键帧动画
+    1. 相当于多个补间动画
+    2. 与元素状态的变化无关
+    3. 定义更加灵活
+    ```
+    .container{
+      width: 100px;
+      animation: run 1s;
+    }
+    @keyframe run{
+      0%{ width: 100 px; } // from
+      100%{ width: 800px; } // to
+    }
+    animation-direction: reverse;
+    animation-fill-mode: forwards; // 保留在结束状态
+    ```
+  - 逐帧动画
+    1. 没有过渡效果，每个帧就代表一个状态。
+    2. 适用于
+       1. 无法补间计算的动画
+       2. 资源较大
+       3. 使用steps()
 
+     // 让没一个帧之间没有过渡动画
+     // steps方法中的参数代表着帧之间有几个画面
+     // steps(1)去掉补间
+    animation-timing-function: steps(1);
+# 面试真题
+  - css动画的性能
+    1. 性能不坏
+    2. 部分情况下优于js
+    3. 但js可以做到更好
+    4. 部分高危属性 box-shadow等
     
+# css预处理器
+  - 嵌套反映层级和约束
+  - 变量和计算 减少重复代码
+    ```
+      @fontSize: 12px;
+      @bgColor: red;
+      background: lighten(@bgColor, 40%);
+    ```
+    函数的使用，可以在css层面上解决代码重用的问题
+    而不是在html上写个基础类。
+  - Extend和Mixin 代码片段
+  - 循环 适用于复杂有规律的样式
+  - import css文件模块化（实际生产中会发送额外的请求，性能不好。预处理可以使用）
+  - 类别
+    1. less（js写的）
+      变量使用@声明
+      .block{}
+      :extend(.block)
+      安装使用：
+        npm i less -g
+        lessc .\1-nest.less>1-nest.css // 在目标所在目录下，将文件将less转换为css
+    2. sass/scss
+      变量使用$
+      使用@mixin @include
+      安装使用：
+      node  i node-sass -g
+      node-sass .\1-nest.scss>1-news-scss.css(此方法保留嵌套结构)
+      node-sass --output-style expanded .\1-nest.scss>1-news-scss.css(消除嵌套)
+    3. stylus
+      安装：
+        npm install stylus -g
+        stylus -w test-stylus.styl -o stylus.css
+  # Bootstrap4
+  - 兼容ie10
+  - 使用flexbox布局
+  - 抛弃normalize.css
+  - 提供布局和reboot版本
+  1. 栅格系统
+    超小屏 col-12
+    小屏 col-sm-12
+  2. 定制方法
+    使用css同名类覆盖
+    修改源码重新构建
+    引用scss源文件 修改变量（引入需要的模块，更灵活）
+
+# css工程化
+  - 组织
+  - 优化
+  - 构建
+  - 维护
+  - postcss（本身只有解析能力）
+    1. css -> css
+    2. 模块化、加前缀、兼容性
+    3. 插件（200多个）
+      - import 模块合并
+      - autoprefixier 自动加前缀
+      - cssnano 压缩代码
+      - cssnext 使用css新特性
+      ```
+        const cssnext = require('postcss-cssnext');
+        module.exports = {
+          plugins: [
+            cssnext
+          ]
+        }
+      ```
+      - precss 变量、mixin、循环等
+        跟预处理器差不多
+    4. 安装、使用
+       npm install postcss-cli -g
+       postcss src/test.css -o build/test.css
+    5. postcss（后处理器）支持的构建工具
+      - cli命令行工具
+      - webpack postcss-loader
+      - gulp gulp-postcss
+        ```
+          const cssnano = require('cssnano');
+          const atImport = require('postcss-import');
+          gulp.task('postcss', function(){
+            var postcss = require('gulp-postcss');
+            return gulp.src('src/main.css')
+              .pipe(postcss([
+                atImport,
+                autoprefixier({
+                  browsers: ['last 2 version']
+                }),
+                cssnano
+              ]))
+              .pipe(gulp.dest('build/'));
+          });
+          命令行： gulp postcss
+        ```
+      - grunt grunt-postcss
+    * 注意 *
+      1. 可以在postcss.config.js中配置指定编译规则
+      ```
+        const atImport = require('postcss-import');
+        module.exports = {
+          plugins: [
+            autoprefixier({ // 神器啊 
+              atImport, // 将@import进来的css合并到被引用的css文件中
+              cssnano, // 压缩代码
+              /*
+                ['Firefox > 30'] 火狐浏览器大于30的版本
+              */
+              browsers: ['>10%'] // 支持份额超过10%的浏览器
+            }),
+          ]
+
+        }
+      ```
+
+# webpack
+  - js是整个应用的核心入口
+  - 一切资源均由js管理依赖
+  - 一切资源均由webpack打包
+  - 使用：
+    webpack src/main.js build/mian.js
+    ```
+      由于webpack是处理js文件的，所以需要通过插件将css转化到js文件中
+      module.exports = {
+        module: {
+          rules: [{
+            test: /\.css$/,
+            // css-loader负责将css转化到js文件交给webpack处理
+            // style-loader将css文件样式注入到html页面中
+            use: ['css-loader','style-loader'] 
+            // 如果组件样式不想被外部重写。写法改为下面
+            这种
+            use: ['style-loader', {
+              loader: 'css-loader', 
+              options: { // 通过这个配置项，修改css的类名
+                modules: true 
+              }
+            }]
+          }]
+        }
+      }
+      var styles = require('components.css');
+      exports.init = function($dom){
+        $dom.innerHTML = '<p class="'+ styles.p +'">helloworld~~~</p>'+
+          '<p class="'+ styles.p +' '+ styles.red +'">helloworld~~~</p>';
+      }
+    ```
+    ## webpack 和css
+    - css-loader 将css变为js
+    - style-loader 将js样式插入head
+    - ExtractTextPlugin 将css从js中提取出来
+    - css modules解决css命名冲突的问题
+    - less-loader sass-loader 各类预处理器
+    - postcss-loader postcss处理
+    ## css面试真题
+    - 如何解决css模块化的问题
+      1. less、sass等css预处理器
+      2. postcss插件（postcss-import/precss等）
+      3. webpack处理css（css-loader+style-loader）
+    - postcss可以做什么？
+      1. 取决于插件可以做什么
+      2. autoprefixier/cssnext/precss等兼容性处理
+      3. import 模块合并
+      4. css语法检查、兼容性检查
+      5. 压缩文件
+        
+    - css modules是做什么的，如何使用
+      1. 解决类名冲突的问题
+      2. 使用postcss或者是webpack等构建工具进行编译
+      3. 在html模板中使用编译过程产生的类名
+    - 为什么使用js来引用、加载css
+      1. js作为入口， 管理资源有天然优势
+      2. 将组件的结构、样式、行为封装到一起，增强内聚
+      3. 可以做更多处理（webpack）
+# VUE中的css
+  - 模拟scoped css
+    方案1： 随机选择器
+      css modules
+    方案2： 随机属性
+      <div abc>
+      div[abc]{}
+  - 命令行
+    vue init webpack demo1
+    
+  * tips *
+    chrome浏览器有针对动画测试的工具Animations
+    vscode的文件对比功能，选中两个文件，右键对比选中文件即可。（超级useful）
+
 
 
 

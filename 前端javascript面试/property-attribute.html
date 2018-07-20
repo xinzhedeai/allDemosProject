@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=`, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="div1" class="class-div1">
+    <p id="p1" data-name="p1-data-name"></p>
+    <p id="p2"></p>
+  </div>
+  <div id="div2">
+    <p id="p3"></p>
+    <p id="p4"></p>
+  </div>
+</body>
+<script>
+
+    // property
+    var div1 = document.getElementById('div1');
+    console.info(div1.className);
+    div1.className = 'abc';
+    
+
+    // attribute
+    console.info(div1.getAttribute('class'));
+    div1.setAttribute('class','edfff');
+    div1.setAttribute('hello', 'world');
+    console.info(div1.getAttribute('hello'));
+    console.info(div1.id);
+    
+</script>
+</html>

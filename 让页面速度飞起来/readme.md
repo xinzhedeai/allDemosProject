@@ -202,7 +202,12 @@
 # TIPS 
   1. network观察请求的总耗时，需要chrome低版本内核才可以看到。比如：360
   2. chrome浏览器查看渲染过程方法  perform面板下 memory/enable/screenshot
-
+  3. chrome的layer面板
+     overflow-scrolling： touch；带有这个样式，重绘的概率很大。所以浏览器chrome自动将其单独设置为了一个图层。
+  4. chrome的more tools里面有个rendering，勾选上paint flashing。页面中重绘的部分会绿色标记上。
+  5. 图层不可以滥用。在合成图层的时候很耗时间
+  6. 使用transform： translateZ（）； // 使用这个样式，可以利用GPU加速。浏览器将设置这个样式的元素建立图层。
+  7. will-change： transform； // 设置图层
 
 
 

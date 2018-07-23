@@ -208,6 +208,18 @@
   5. 图层不可以滥用。在合成图层的时候很耗时间
   6. 使用transform： translateZ（）； // 使用这个样式，可以利用GPU加速。浏览器将设置这个样式的元素建立图层。
   7. will-change： transform； // 设置图层
+  8. 用translate替代top
+     用opacity（不会引发重绘）替代visibility（会引发重绘）
+  9. 不要一条一条地DOM的样式，预先定义好class， 然后修改DOM的className
+  10. 把dom离线后修改
+      比如： 先把DOM给display：none（又一次回流）， 然后你修改100次，然后再把它显示出来。
+  11. 不要把dom节点的属性值放到一个循环里当成循环里的变量
+      offsetHeight offsetWidth  
+  12. 不要使用table布局，可能很小的一个小改动会造成整个table的重新布局。
+  13. 动画实现是速度的选择。
+  14. 对于动画新建图层
+  15. 启用GPU硬件加速 translate3D*();
+
 
 
 

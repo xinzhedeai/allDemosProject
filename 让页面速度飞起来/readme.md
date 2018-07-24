@@ -208,7 +208,7 @@
   5. 图层不可以滥用。在合成图层的时候很耗时间
   6. 使用transform： translateZ（）； // 使用这个样式，可以利用GPU加速。浏览器将设置这个样式的元素建立图层。
   7. will-change： transform； // 设置图层
-  8. 用translate替代top
+  8. 用translate（不会引发回流）替代top（引发回流）
      用opacity（不会引发重绘）替代visibility（会引发重绘）
   9. 不要一条一条地DOM的样式，预先定义好class， 然后修改DOM的className
   10. 把dom离线后修改

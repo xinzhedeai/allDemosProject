@@ -4,6 +4,26 @@
       "js/mui.min.js",
       "fonts/mui.ttf",
       "css/mui.min.css"
+    ],
+    "refer": []
+  },
+  "login.html": {
+    "resources": [
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "css/style.css",
+      "img/logo.png"
+    ],
+    "refer": []
+  },
+  "password.html": {
+    "resources": [
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "css/style.css",
+      "img/logo.png"
     ]
   }
 }

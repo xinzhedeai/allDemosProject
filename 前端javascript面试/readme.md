@@ -489,13 +489,127 @@
         - 需要异步加载JS，使用AMD
         - 使用了npm之后建议使用CommonJS
 
+  - 构建工具
+    1. 安装node
+      npm install http-server -g // 安装轻量级服务器（只适合静态页面浏览）
+      http-server -p 8881 // 开启端口号为8881的服务器
+    2. 安装webpack等开发环境
+      npm install webpack --save-dev // 把依赖保存到配置文件package.json的dev对象下
+      npm i jquery --save // 默认保存到dependencies（生产环境下用到的）
+      npm i moment --save // 时间工具库
+      *jquery在环境当中的使用*
+        ```
+          var $ = require('jquery');
+          var $root = $('#root');
+          $root.html('<p>这是jquery插入的文字</p>');
+        ``` 
+        ```
+         // 自定义js文件引入 符合CommonJS规范
+         a-util.js文件代码
+          module.exports = {
+            print: function(){
+              console.log(123);
+            }
+          }
+        app.js中的代码
+         var util = require('./a-util.js');
+         aUtil.print();
+        ```
   - 打包工具
     1. grunt
-    2. 
-  - 上线回滚流程
+    2. gulp
+    3. webpack
+  - 上线回滚流程  
+    上线
+      1. 将测试完成的代码提交到git版本库的master分支
+      2. 将当前服务器的代码全部打包并记录版本号，备份
+      3. 将master分支的代码提交覆盖到线上服务器，生成新版本号
+    回滚
+      将上一版本号的代码重新覆盖
+    linux基本命令
+      mkdir a
+      ls 
+      ll
+      pwd
+      rm -rf a 
+      vi a.js
+      cp a.js a1.js
+      mv a1.js src/a1.js
+      rm a.js
+      cat a.js
+      head a.js 
+      head -n 1 a.js // 只输出第一行
+      tail a.js
+      grep '2' a.js // 关键字符搜索
+# 页面加载-渲染过程
+  - 加载资源的形式
+    1. 输入url加载html
+    2. 加载html中的静态资源
+
+  - 加载一个资源的过程
+    1. 浏览器根据DNS服务器得到域名的IP地址
+    2. 向这个IP的机器发送http请求
+    3. 服务器收到、处理并返回http请求
+    4. 浏览器得到返回内容
+  - 浏览器渲染页面的过程
+    1. 根据HTML结构生成 DOM Tree
+    2. 根据CSS生成CSSOM
+    3. 将DOM和CSSOM整合形成RenderTree
+    4. 根据RenderTree开始渲染和展示
+    5. 遇到`<script>`时，会执行并阻塞渲染
+  - window.onload和DOMContentLoaded的区别
+    ```
+      window.addEventListener('load', function(){
+        // 页面的全部资源加载完才会执行，包括图片、视频等
+      })
+      document.addEventListener('DOMContentLoaded', function(){
+        // DOM 渲染完即可执行，此时图片、视频还可能没加载完
+      });
+    ```
+# 性能优化
+  - 多使用内存、缓存或者其他方法
+  - 减少cpu计算、减少网络请求
+  ## 加载资源优化
+  1. 静态资源的压缩合并
+  2. 静态资源缓存
+  3. 使用CDN让资源加载更快（通过cdn，可以吧请求的资源就近分配）
+  4. 使用SSR后端渲染，数据直接输出到HTML中（而不是需要ajax获取数据在写到页面中）
+  ## 渲染优化
+  1. css放前面， js放后面
+  2. 懒加载(图片懒加载、下来加载更多)
+  3. 减少DOM操作，多个操作尽量合并在一起执行
+  4. 事件节流(很不错，用户停止输入的时候进行逻辑处理)
+    ```
+     var textarea = document.getElementById('text');
+     var timeoutId;
+     textarea.addEventListener('keyup', function(){
+       if(timeoutId){
+         clearTimeout(timeoutId);
+       }
+       timeoutId = setTimeout(function(){
+         // 触发 change 事件
+       }, 100);
+     })
+    ```
+  5. 尽早执行操作（如DOMContentLoaded）
+# 安全性
+  - XSS 跨站请求攻击 
+    1. 在sina博客写一个文章，插入一段`<script>`
+    2. 攻击代码中，获取cookie，发送到自己的服务器
+    3. 发布博客，有人查看博客内容
+    4. 会把查看着的cookie放到攻击者的服务器
+    预防：前端替换关键字，例如替换<为&lt；>为&gt；
+          后端替换
+  - XSRF 跨站请求伪造
+    1. 你已登录一个购物网站，正在浏览商品
+    2. 该网站付费接口是xxx.com/pay?id=100 但是没有任何验证
+    3. 然后你收到一封邮件，隐藏着`<img src="xxx.com/pay?id=100">`
+    4. 你查看邮件的时候，就已经悄悄付费购买了
+    解决方案：
+      增加验证流程，如输入指纹、密码、短信验证码（后台弄）
 
 * tips *
   [手机前端开发调试利器 – vConsole](https://blog.csdn.net/aaa333qwe/article/details/78261442)
   1. 完美解码快捷键：alt + k 旋转视屏方向 
-
+ 
       

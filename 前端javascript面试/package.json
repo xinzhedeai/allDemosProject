@@ -1,0 +1,5 @@
+{
+  "name": "",
+  "version": "",
+  "description": "- 何时使用 === 或 ==\r     1. \r       ```\r         if(obj.a == null){\r           // 这里相当于obj.a === null || obj.a === undefined简写形式。。\r         }\r       ```"
+}

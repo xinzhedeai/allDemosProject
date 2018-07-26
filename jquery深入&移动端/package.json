@@ -1,0 +1,10 @@
+{
+  "name": "",
+  "version": "",
+  "description": "- 栅格布局 规则：\r     1. `<div class=\"container\"></div`调试内外边距 对其方式。。。\r     2. row 默认12列\r     3. 具体内容放在列元素之内，列元素能成为row元素的直接子元素****\r     * `col-md-offset-5 ` offset-3偏移3个列margin-left像素\r     * 支持嵌套 row-> col-> row\r     * 列的顺序问题 \r       `col-md-push-7` 元素向右边移动7个列\r       `col-md-pull-5` 元素向左移动5个列\r     * 超小屏幕 手机(<768px) .col-xs-\r       小屏幕 平板（>=768px） .col-sm-\r       中等屏幕 桌面显示器（>=992px） .col-md-\r       大屏幕 大桌面显示器 （>=1200px） .col-lg-\r       ```\r         @media screen and (min-width: 400px){\r           #div{\r             font-size: 12px;\r           }\r         }\r       ```",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.3.1",
+    "normalize.css": "^8.0.0"
+  }
+}

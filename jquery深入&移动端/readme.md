@@ -392,8 +392,63 @@
           **/
          ```
   # 实用工具方法
+  - jQuery.noConfict();
+    ```
+      jQuery.noConfict();
+      $.hello(); // 自定义方法库，占用$符号
+      jQuery(function(){ // jquery交出$使用权，需要使用jQuery
+
+      })
+      
+        
+    ```
+    // 如果$和jQuery都被占用了
+    ```
+      var $j = jQuery.noConfict(true); // 将jquery的控制权交给了$j
+    ```
+  - 浏览器及特性检测
+    1. $.support （一个对象，浏览器支持的属性）
+    * 如果想做好浏览器兼容性，不建议使用$.support
+      最好使用[Modernzr](http://modernizr.cn/)
+  - 处理js对象和集合
+    1. `$.trim('str'); // 去除两边的空格，产生新的字符串`
+    2. 循环
+      原生 `for（）/ for in obj / arr.forEach((currentValue, index, array)=>{}) `
+      jquery: 
+              ``` 
+                $.each(arr, (index, currentValue)=>{
+                  return true; // 相当于continue
+                  return false; // 相当于break
+                })
+              ```
+  - 过滤数组
+    $.grep(array, callback [,invert(处理结果为false的留下，为true的干掉)]) // 第一个参数是当前值，第二个是索引
+    ```
+      var arr = [2, 3, 5, 13];
+      var arr2 = $.grep(arr, (currentValue, index) => {
+        return currentValue > 10; // 结果大于10 则留下
+      });
+    ```
+  - 转换数组
+    $.map(collection, callback)
+    ```
+      var arr = [2, 3, 5, 13];
+      var arr2 = $.map(arr, (currentValue, index) => {
+        return currentValue + 1; // 将数组元素重组之后返回
+        return null / undefined // 如果是这两种值，则不会映射任何值
+      });
+    ```
+  - 更多数组操作方法
+    1. $.inArray(value, array);
+    2. $.makeArray(object) // 将类数组对象转化为数组
+    3. $.merge(array1, array2) // 合并2个数组
+  - 拓展对象
+    1. $.extend([deep,], target, [source1, source2,...N])
+      * 后面的会覆盖前面的  
+
   - $.noop()
   - $.contains(container, contained)
+  
   * Tips *
     - jquery1.10.1以前的jquery版本，在show的时候，无论元素之前的display 
       设置的样式为什么，都会设为block。新版本不会这么做。保留元素之前的inline-block

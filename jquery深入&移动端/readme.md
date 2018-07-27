@@ -445,7 +445,11 @@
   - 拓展对象
     1. $.extend([deep,], target, [source1, source2,...N])
       * 后面的会覆盖前面的  
-
+      `$.extend(true, target, source1, source2)`
+  - 测试对象
+    $.isArray(param)/$.isEmptyObject(param)/$.isFunction(param)
+    $.isNumeric(param)/$.isPlainObject(param)/$.isWindow(param)
+    
   - $.noop()
   - $.contains(container, contained)
   

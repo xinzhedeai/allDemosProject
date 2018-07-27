@@ -104,6 +104,41 @@
         <li class="">分类</a></li>
        </ul>
     ```
+    ```
+    // 导航条
+    navbar navdefault navbar-brand
+     <nav class="navbar navbar-default">
+        <div class="navbar-header">
+          <a href="#" class="navbar-brand">test</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="#">111</li>
+          <li><a href="#">111</li>
+          <li><a href="#">111</li>
+        </ul>
+     </nav>
+    <!-- 常用导航
+      navbar-toggle 定位 内外边距 背景色
+      data-toggle="触发元素" 由什么事件触发的
+      data-targe="#aaa" 谁触发的事件
+      icon-bar 隐藏的菜单选项
+    -->
+     <nav class="navbar navbar-default">
+        <div class="container-fluid"><!-- 居中显示 -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#aaa">
+              <span class="icon-bar"></span>
+            </button>
+            <a href="#" class="navbar-brand">菜单</a>
+          </div>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="#">111</li>
+          <li><a href="#">111</li>
+          <li><a href="#">111</li>
+        </ul>
+     </nav>
+    ``` 
   4. 标签 label label-default/primary/success/info/warning/danger
       role="tablist" // 屏幕阅读器
   5. 徽章 span.badge
@@ -111,9 +146,254 @@
   7. 警告框 .alert .alert-success/info....
   8. 进度条 .process->.process-bar
 
-
+# 插件（插件名称.js / bootstrap.js）
+  - 调用方式
+    1. data属性
+    2. 编程方式
+      对象.modal({'a':value, 'b': value});
+      对象.modal('字符串')
+  - 模态框（可选尺寸）
+  - 滚动监听（页面内容和导航按钮对应）
+    ```
+        <nav id="test" class="navbar navbar-default">
+          <div class="container">
+            <div>
+               <ul class="nav navbar-nav">
+                <li><a href="#ios">ios</li>
+                <li><a href="#php">php</li>
+                <li><a href="#java">java</li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <!--
+          data-target="test" 执行滚动监听的目标
+          data-spy="scroll" 添加滚动监听
+        -->
+        <div data-targe="#test" data-spy="scroll" style="height:200px;overflow:auto;position:relative">
+          <h4 id="ios">ios</h4>
+          <p>
+              这是ios的内容 这是ios的内容 这是ios的内容 这是ios的内容 这是ios的内容
+          </p>
+           <h4 id="php">php</h4>
+          <p>
+              这是ios的内容 这是ios的内容 这是ios的内容 这是ios的内容 这是ios的内容
+          </p>
+           <h4 id="java">java</h4>
+          <p>
+              这是ios的内容 这是ios的内容 这是ios的内容 这是ios的内容 这是ios的内容
+          </p>
+        </div>
+    ```
+  - 选项卡
+    ```
+      <!--
+        选项卡： 
+          tab-content bs中用来定义选项卡的父级元素
+          fade 指定透明度和渐变效果
+          fade in 透明度
+          tab-pane 隐藏元素
+          active 显示元素
+      -->
+      <ul class="nav nav-tabs">
+        <li class="active">
+          <a href="#home" data-toggle="tab">aaa</a>
+        </li>
+        <li class="">
+          <a href="#test" data-toggle="tab">bbb</a>
+        </li>
+        <li class="">
+          <a href="#demo" data-toggle="tab">ccc</a>
+        </li>
+      </ul>
+      <div class="tab-content">
+        <div id="home" class="tab-pane fade in active">
+          aaa
+        </div>
+        <div id="test" class="tab-pane fade">
+          bbb
+        </div>
+        <div id="demo" class="tab-pane fade">
+          ccc
+        </div>
+    ```
+  - 弹出框popover
+    ```
+      <!--
+        弹出框
+        data-container 向指定元素添加弹出框
+        data-toggle="popover" 指定弹出框执行
+        data-placement 弹出框的方位 /top/bottom/left/right
+        对象.popover();
+        data-trigger="focus" // 控制popover消失 
+      -->
+      <div class="container">
+        <button type="button" class="btn btn-default" data-container="body" 
+                data-toggle="popover" data-placement="top" 
+                data-content="弹出框内容" data-trigger="focus">
+          弹出窗
+        </button>
+      </div>
+      <script>
+        $(function(){
+          $('[data-toggle="popover"]').popover();
+        })
+      </script>
+    ```
 
 * tips *
   1. npm install normalize.css 安装重置样式文件 
   2. demo样式没出来，竟然是因为样式字母大小写的问题~~~低级错误，切记不要再犯~~~！！
   3. html标签里面如果有两个class属性，那么只有第一个class的属性生效
+  4. .hidden-sm / .hidden-xs 添加该样式类的元素在手机或平板下隐藏
+
+
+
+# jquery 动画
+  - 显示和隐藏元素
+    ```
+      $body.is(':hidden'); // 判断一个元素是否为隐藏状态的
+      toggle // 切换元素显示隐藏的状态
+      fadeToggle // 根据透明度设置显示隐藏
+      fadeTo(100, 0.5, 'swing', function(){}) // 控制透明度的显示程度
+      slideUp/slideDown/slideToggle // 改变元素尺寸
+      show(199(ms), [切换效果（swing(jquery默认，更有动感)/linear（匀速的））], [callback])
+    ```
+  - 停止动画
+    ```
+      $ele.stop(clearQueue(Boolean), [.goToEnd](Boolean))
+      $ele.finish([queue]): 所有的堆栈动画直接结束
+      $ele.stop(true, true): 阻止当前的动画
+      jQuery.fx.off = true // 全局开关。关闭所有jquery的动画，直接进入finish的状态
+      
+    ```
+    jQuery Easing 插件
+      [地址一](https://github.com/gdsmith/jquery.easing)
+      [地址二](http://code.ciaoca.com/jquery/easing/)
+      使用：
+      ```
+        <script src="jquery"></script>
+        <script src="jquery.easing.js"></script>
+        <script>
+          $('.title').click(() => {
+            $(this).siblings('.body').slideToggle(3000, 'easeInOutElastic', () => {
+              console.log('动画完成');
+            });
+          });
+        </script>
+        
+      ```
+  - 自定义动画
+    ```
+      // 不是万能的，字体、颜色不能进行过渡
+      /**
+       *  主要是针对：
+       *  top left 位置属性
+       *  width height 尺寸属性
+       *  margin padding border 边距属性
+       *  font-size 字体属性
+       *  opacity 透明度属性
+       *
+       **/
+      $ele.animate({
+        width: 400,
+      }, 3000, fn);
+      $ele.animate({
+        width: '+=400', // 竟然还可以进行运算 (百分号也可以)
+        height: '-=100' // （50%）
+      }, 3000, fn);
+    ```
+    options(参数，不仅animatte，其他show（）等也可以使用)
+      always/complete/done/duration/easing/fail/progress/queue(Boolean)/specailEasing/start/step
+      ```
+        $ele.animate({
+          width: 50%,
+        }, {
+          always: () = > {
+            console.log('always');
+          },
+          progress: () = > {
+            console.log('progress ');
+          },
+          step: () => { // 没动画一点都会触发这个函数
+            console.log('step');
+          },
+          duration: 3000,
+          easing: 'linear'
+
+        });
+        // 动画效果案例(按钮慢慢放大，最后消失)
+        $ele.click(() => {
+          var $this = $(this);
+          $this.css({
+            position: 'absolute',
+            top: $this.position().top,
+            left: $this.position().left
+          }).animate({
+            width: $this.width() * 2,
+            height: $this.height() * 2,
+            top: $this.position().top - $this.height,
+            left: $this.position().left - $this.width,
+            opacity: 0
+          }, 3000);
+        });
+        
+      ```
+    - 动画队列
+      - 动画队列堆栈
+        动画异步执行
+        .queue([name], fn)
+        .queue([name], queue)
+        .dequeue([name])
+        ```
+          // 传统写法 队列
+          $ele.animate({left: '+=50'}, 200, () => {
+             $ele.animate({left: '+=50'}, 200, () => {
+               $ele.animate({left: '+=50'}, 200);
+            }
+          })
+
+        /*******************************************/
+          
+          // queue
+          // 添加队列
+          $ele.queue('chain', () => {
+            console.log('step1');
+          }).queue('chain', () => {
+            console.log('step2');
+          })
+          console.log($ele.queue('chain')); // 显示动画队列信息
+          $ele.dequeue('chain'); // 从step1 ~ 2依次执行
+      
+        /*******************************************/
+
+          // 自动进行队列动画的执行，不用手动进行操作
+          $ele.queue('chain', (next) => {
+          //  console.log('step1');
+            next();
+          }).queue('chain', (next) => {
+            // next();  // 最后一个队列不需要next();
+            console.log('step2');
+          })
+        /*******************************************/
+        clearQueue('chain'); // 清空队列
+        $ele.delay(1000); // 延迟1s
+
+        /**
+          * 由于队列是异步的，所以可能其他设定样式的语句会先执行
+          * 如果想控制下执行顺序
+          * 1. 可以在动画执行的回调函数写语句
+          * 2. 可以将语句添加到队列当中，然后在合适的地方触发
+          * $ele.queue('fx', () => {
+              $ele.css({
+                backgroundColor: '#999'
+              }).dequeue('fx')
+            });
+          **/
+         ```
+  # 实用工具方法
+  - $.noop()
+  - $.contains(container, contained)
+  * Tips *
+    - jquery1.10.1以前的jquery版本，在show的时候，无论元素之前的display 
+      设置的样式为什么，都会设为block。新版本不会这么做。保留元素之前的inline-block

@@ -450,9 +450,110 @@
     $.isArray(param)/$.isEmptyObject(param)/$.isFunction(param)
     $.isNumeric(param)/$.isPlainObject(param)/$.isWindow(param)
     
-  - $.noop()
-  - $.contains(container, contained)
+  - $.noop() // 定义一个什么也不干的空方法
+  - $.contains(container, contained) // 判断一个dom节点是否在另一个dom节点里面
+  - $ele.has($ele); // 如果有包含关系，那么会返回包含的元素
+  - $.error(string) // 更详细的错误信息显示
   
+  - $.type(val)
+          
+# AJAX
+  - CORS 跨域解决方案
+    1. 跨域(不同域名、不同端口、不同协议)
+    2. 解决方法：
+      XMLHttpRequest Level2 中加入
+      需要服务器配合设置响应头
+        header（'Access-Control-Allow-Origin: *'）;
+      可选择是否带上cookie
+  - 简单请求与复杂请求
+    1. 复杂请求会先发送一次OPTIONS方法的预检请求
+    2. 简单请求需要同时满足条件：
+      - 请求Method必须为HEAD/GET/POST之一
+      - 请求头中的字段不超过Accept/Accept-Language
+        /Content-Language/Last-Event-ID/Content-Type
+    3. Content-Type只限于三个值application/x-www-form-urlencoded、multipart/form-data、text/plain 
+  - 创建ajax
+    ```
+      btn.addEventListener('click', ajax);
+      function ajax(){
+        var xhr = window.XMLHttpRequest ? (new XMLHttpRequest()) : (new ActiveXObject('Microsoft.XMLHTTP'));
+
+        xhr.open('GET', './data.json', false); // 第三个参数代表是否是异步的（默认true 异步）
+        var formData = new FormData();
+        formData.append('name', '"123"');
+        xhr.onreadystatechange = function(){
+          console.log(xhr.readState);
+          if(xhr.readySate === 4 && xhr.status === 200){
+            store.innerHTML = xhr.response;
+          }else{
+            console.error('error');
+          }
+        }
+        xhr.setRequestHeader('user', 'imooc');
+        xhr.setRequestHeader('user', 'js'); // user= ‘immoc，js’；
+        xhr.responseType = 'json';
+        xhr.send(formData);
+        console.log(xhr.readyState);
+        xhr.abort(); // 放弃提交
+        console.log(xhr.readState);
+
+        function loadData(){
+          if(xhr.readySate === 4 && xhr.status === 200){
+            console.log(typeof xhr.response);
+            try {
+              store.innerHTML = JSON.stringify(xhr.response, null, 2);
+            } catch(e) {
+              store.innerHTML = 'parse error';
+            }
+          }
+        }
+
+      }
+      /*
+       * post提交，需要设置header，不然会报错
+       * xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+       * abort 
+       * 重复发送同样的请求，会清除掉上一次请求，减缓服务器压力
+       * 
+       * /
+
+    ```
+    - setRequestHeader方法
+      1. 设置请求头，同字段多次设置时，值会合并到一个字段中(中间用,号隔开)
+      2. 必须在open与send方法执行顺序中间调用
+      3. 默认的Accept字段值为"*/*"
+    - getResponseHeader方法
+      1. 获取响应头内容，参数接受响应头字段名，返回字段值
+      2. 字段名忽略大小写
+      3. 多个字段名存在时，多个值以逗号+空格连成一个
+    - timeout属性
+      1. 设置超时时间，毫秒为单位
+      2. 超时后会触发timeout事件
+      3. IE中，超时必须在open方法后，send方法前设置
+      ```
+        xhr.ontimeout = () = > {
+          console.log('timeout');
+        }
+        xhr.timeout = 2000;
+        
+      ```
+    - status属性
+      1. 初始status为0， 接受响应后标准的HTTP状态码
+      2. 如果响应头中没有设置状态码，则默认为200
+      3. XHR出错时，status也为0
+    - upload属性
+      1. 返回一个XMLHTTPRequestUpload对象
+      2. 可通过绑定事件侦听上传过程
+    - responseType属性
+      1. 设置响应内容的格式类型，默认字符串
+      2. 可设置多种格式： json、blob、arraybuffer等
+      3. 设置后会影响response的值
+    - response属性
+      1. 响应的正文内容
+      2. 默认为字符串， 但会被responseType影响
+
   * Tips *
     - jquery1.10.1以前的jquery版本，在show的时候，无论元素之前的display 
       设置的样式为什么，都会设为block。新版本不会这么做。保留元素之前的inline-block
+    - 服务器
+      phpstudy/wamp/lamp/ npm i anywhere

@@ -5,3 +5,46 @@
 .bg-color{
 	background-color: #dcd9cf;
 }
+
+/*登录*/
+.dl-a-a img{
+	display: block;
+	width: 100px;
+	height: 100px;
+	margin: 50px auto;
+	
+}
+.dl-b{
+	background-color: #fff;
+}
+.dl-a-b{
+	overflow: hidden;
+	height: 45px;
+	background-color: red;
+	border-bottom: 1px solid #F0F0F0;
+}
+.dl-a-b-l{
+	float: left;
+	width: 20%;
+	background-color: #f0f0f0;
+	line-height: 45px;
+	text-align: center;
+	font-size: 14px;
+}
+.dl-a-b-r{
+	float: left;
+	width: 80%;
+	background-color: blue;
+	border-left: 1px solid #f0f0f0;
+}
+.dl-a-b-r input{
+	border: 0;
+	border-radius: 0;
+	height: 45px;
+	font-size: 13px;
+}
+.btn button{
+	display: block;
+	width: 90%;
+	margin: 0 auto;
+}

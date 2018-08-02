@@ -1,4 +1,4 @@
-
+# 哈哈哈
 [项目线上地址](http://www.happymmall.com)
 [资源下载地址](http://learning.happymmall.com/env.html)
 
@@ -28,7 +28,12 @@
     dcl： grant
     `yum -y install mysql-server` // 安装mysql
     `service mysqld start`
-  
+  # 数据库
+    - 时间戳（查业务问题的后悔药）
+      create_time : 数据创建的时间
+      update_time: 数据更新的时间
+      
+
   * tips *
     1. yum -y // 默认为Y操作
     2. 启示录【3：5】凡得胜的，必这样穿白衣，我

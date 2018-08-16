@@ -33,12 +33,25 @@
       create_time : 数据创建的时间
       update_time: 数据更新的时间
       
-
+  # mybatis
+    ```
+      select 
+        <include refid="Base_Column_List"/>
+      form mmall_user
+      where username = #{username}
+      and password = #{password}
+    ```
   * tips *
     1. yum -y // 默认为Y操作
     2. 启示录【3：5】凡得胜的，必这样穿白衣，我
-
-
-
+    1. restlet client 和postman同类型的软件
+    1. FE助手 （格式化json）
+    1. 
+      // 使之不在序列化结果当中
+      @JsonIgnore 
+      // 保证序列化json的时候，如果是null的对象， key也会消失
+      @JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL) 
+    1. 找到实现类对象的方法调用并选中，ctrl + t，
+    1. eclipse 快捷键  ctrl+alt+箭头下  快速复制当前行到下一行  （如果遇到屏幕倒转的情况  可以在屏幕上鼠标右键 快捷键 禁用即可。）
      
  
